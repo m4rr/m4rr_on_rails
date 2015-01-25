@@ -1,0 +1,117 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'reset';
+/*@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,bold&subset=latin,cyrillic);*/
+
+$font-stack: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif; // 'PT Sans Caption', 
+
+$bg-color: #fdfdfd; // #159588;
+$fg-color: #666;
+
+html, body, .container {
+  box-shadow: none;
+  font-family: $font-stack;
+  font-size: 15px;
+  line-height: 140%;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+.map {
+  width: 66%;
+  height: 100%;
+}
+
+.sidebar {
+  color: $fg-color;
+  background-color: $bg-color;
+  position: absolute;
+  left: 66%;
+  width: 34%;
+  height: 100%;
+}
+
+p, h1 {
+  font-family: Roboto, "Playfair Display", "Helvetica Neue", sans-serif;
+  margin: 15px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.stars {
+  color: gold;
+}
+
+.eof {
+  margin: 15px;
+  text-align: center;
+}
+
+.eof a {
+  text-decoration: none;
+}
+
+.icon {
+  display: inline;
+  fill: #5856d6;
+  opacity: .9;
+}
+
+.icon:hover {
+  fill: #ff2d55;
+  opacity: .7;
+}
+
+.likely-wrapper {
+  bottom: 0;
+  margin: 0;
+  padding: 10px 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.likely div {
+  /*display: block !important;*/
+  margin: 0 6px 6px 0 !important; 
+}
+
+a, a:visited {
+  color: #5856d6;
+}
+
+a:hover {
+  color: #ff2d55;
+}
+
+.gm-style-iw {
+  overflow: visible !important;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .map {
+    width: 100%;
+    height: 40%;
+  }
+  .sidebar {
+    /*display: none;*/
+    left: 0;
+    top: 40%;
+    width: 100%;
+    min-height: 100%;
+  }
+}

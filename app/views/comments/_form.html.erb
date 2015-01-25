@@ -1,0 +1,13 @@
+<%= form_for([@article, @article.comments.build]) do |f| -%>
+  <p>
+    <%= f.label :commenter, "Commenter" %>
+    <%= f.text_field :commenter %>
+  </p>
+  <p>
+    <%= f.label :body, "Body" %>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit "Submit", :disable_with => 'Submiting...' %>
+  </p>
+<% end %>
