@@ -9,11 +9,12 @@ $font-stack: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif; // 'PT Sans
 
 $bg-color: #fdfdfd; // #159588;
 $fg-color: #666;
+$default-margin: 15px 30px;
 
-html, body, .container {
+html, body, {
   box-shadow: none;
   font-family: $font-stack;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 140%;
   margin: 0px;
   padding: 0px;
@@ -24,31 +25,81 @@ html, body, .container {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
+
+}
+
+.container {
+  display: -webkit-flex;
+  display: flex;
+  /*overflow-y: hidden;*/
+  height: 100%;
+  width: 100%;
+}
+
+nav {
+  -webkit-flex: 1;
+          flex: 1;
+  min-width: 300px;
+
+  border: 0 solid #eee;
+  border-width: 0 0 0 1px;
+
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+
+
 }
 
 .map {
-  width: 66%;
+  -webkit-flex: 2;
+          flex: 2;
+/*  width: 66%;
   height: 100%;
+*/
 }
 
-.sidebar {
-  color: $fg-color;
-  background-color: $bg-color;
-  position: absolute;
-  left: 66%;
-  width: 34%;
-  height: 100%;
-}
-
-p, h1 {
-  font-family: Roboto, "Playfair Display", "Helvetica Neue", sans-serif;
-  margin: 15px;
-  text-align: center;
+p {
+  /*margin: 8px 15px;*/
+  margin: $default-margin;
+  /*text-align: center;*/
 }
 
 h1 {
   font-size: 24px;
   font-weight: bold;
+  margin: $default-margin;
+  margin-top: 30px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 12px;
+  /*font-weight: bold;*/
+  letter-spacing: .2em;
+  margin: $default-margin;
+  margin-bottom: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.to-left {
+  display: inline-block;
+  float: left;
+  text-align: left;
+}
+
+.to-center {
+  text-align: center;
+}
+
+.to-right {
+  display: inline-block;
+  float: right;
 }
 
 .stars {
@@ -66,35 +117,50 @@ h1 {
 
 .icon {
   display: inline;
-  fill: #5856d6;
-  opacity: .9;
+  fill: #ccc;
+  /*opacity: .9;*/
 }
 
 .icon:hover {
   fill: #ff2d55;
-  opacity: .7;
+  /*opacity: .7;*/
 }
 
-.likely-wrapper {
-  bottom: 0;
-  margin: 0;
-  padding: 10px 0;
+.likely-wrapper-outside {
+  /*left: 0;*/
+  /*right: 0;*/
+  /*center: 0;*/
+  bottom: 0px;
   position: absolute;
-  text-align: center;
-  width: 100%;
+  /*width: 100%;*/
+  margin: auto;
+  /*height: auto;*/
+  display: block;
+
+  .likely-wrapper {
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    vertical-align: bottom;
+    width: 100%;
+
+    div {
+      /*display: block !important;*/
+      margin: 0 3px 6px 3px !important;
+    }
+  }
 }
 
-.likely div {
-  /*display: block !important;*/
-  margin: 0 6px 6px 0 !important; 
-}
+
 
 a, a:visited {
   color: #5856d6;
+  text-decoration: none;
 }
 
 a:hover {
   color: #ff2d55;
+  text-decoration: underline;
 }
 
 .gm-style-iw {
@@ -103,15 +169,60 @@ a:hover {
 }
 
 @media (max-width: 600px) {
+  .container {
+  -webkit-flex: none;
+          flex: none;
+  }
   .map {
     width: 100%;
     height: 40%;
+  -webkit-flex: none;
+          flex: none;
   }
-  .sidebar {
+  nav {
     /*display: none;*/
     left: 0;
+    position: absolute;
     top: 40%;
-    width: 100%;
+    /*width: 100%;*/
     min-height: 100%;
+  -webkit-flex: none;
+          flex: none;
   }
 }
+
+
+/*iPhone 6 Portrait*/
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) { 
+
+}
+
+/*iPhone 6 landscape*/
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : landscape) { 
+
+}
+
+/*iPhone 6+ Portrait*/
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : portrait) { 
+
+}
+
+/*iPhone 6+ landscape*/
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : landscape) { 
+
+}
+
+/*iPhone 6 and iPhone 6+ portrait and landscape*/
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px){ 
+}
+
+/*iPhone 6 and iPhone 6+ portrait*/
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) and (orientation : portrait){ 
+
+}
+
+/*iPhone 6 and iPhone 6+ landscape*/
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) and (orientation : landscape){ 
+
+}
+
