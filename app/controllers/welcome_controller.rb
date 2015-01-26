@@ -1,5 +1,11 @@
 class WelcomeController < ApplicationController
 
+# todo:
+  # map pins
+  # foursquare api
+  # likely to bottom
+  # check tripster w/o a file
+
   def index
     @hash = visited_cities
   end
