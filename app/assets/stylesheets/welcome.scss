@@ -44,11 +44,11 @@ nav {
   border: 0 solid #eee;
   border-width: 0 0 0 1px;
 
+  position: relative;
+
   box-sizing:border-box;
   -moz-box-sizing:border-box;
   -webkit-box-sizing:border-box;
-
-
 }
 
 .map {
@@ -126,30 +126,23 @@ strong {
   /*opacity: .7;*/
 }
 
-.likely-wrapper-outside {
-  /*left: 0;*/
-  /*right: 0;*/
-  /*center: 0;*/
-  bottom: 0px;
+
+.likely-wrapper {
+  padding: 10px 0;
   position: absolute;
-  /*width: 100%;*/
-  margin: auto;
-  /*height: auto;*/
-  display: block;
 
-  .likely-wrapper {
-    padding: 10px 0;
-    text-align: center;
-    position: relative;
-    vertical-align: bottom;
-    width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
-    div {
-      /*display: block !important;*/
-      margin: 0 3px 6px 3px !important;
-    }
+  text-align: center;
+  width: 100%;
+
+  div {
+    margin: 0 3px 6px 3px !important;
   }
 }
+
 
 
 
