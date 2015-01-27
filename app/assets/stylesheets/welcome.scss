@@ -54,9 +54,11 @@ nav {
 .map {
   -webkit-flex: 2;
           flex: 2;
-/*  width: 66%;
-  height: 100%;
-*/
+}
+
+.gm-style {
+  bottom: -30px;
+  height: auto !important;
 }
 
 p {
