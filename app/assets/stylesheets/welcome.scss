@@ -37,14 +37,15 @@ html, body, {
 }
 
 nav {
-  -webkit-flex: 1;
-          flex: 1;
-  min-width: 300px;
-
   border: 0 solid #eee;
   border-width: 0 0 0 1px;
 
+  max-width: 410px;
+  min-width: 300px;
+
   position: relative;
+  -webkit-flex: 1;
+          flex: 1;
 
   box-sizing:border-box;
   -moz-box-sizing:border-box;
@@ -174,14 +175,15 @@ a:hover {
           flex: none;
   }
   nav {
-    /*display: none;*/
-    left: 0;
     position: absolute;
+    left: 0;
     top: 40%;
-    /*width: 100%;*/
+
+    max-width: none;
     min-height: 100%;
-  -webkit-flex: none;
-          flex: none;
+
+    -webkit-flex: none;
+            flex: none;
   }
 }
 
