@@ -48,4 +48,4 @@ gem 'nokogiri' # xml parsing
 gem 'geocoder'
 gem 'gmaps4rails' # google maps
 
-gem 'evil_icons'
+# gem 'evil_icons'
