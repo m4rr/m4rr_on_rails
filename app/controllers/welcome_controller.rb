@@ -42,11 +42,11 @@ class WelcomeController < ApplicationController
         lng = e.xpath("@lon").to_s.to_f
         country_name_en = country_name_by(id)
         City.new(
-          :name_en    => en, 
+          :name_en    => en,
           :name_ru    => ru,
-          :latitude   => lat, 
-          :longitude  => lng, 
-          :country_alpha2  => id, 
+          :latitude   => lat,
+          :longitude  => lng,
+          :country_alpha2  => id,
           :country_name_en => country_name_en
         ).save
       }

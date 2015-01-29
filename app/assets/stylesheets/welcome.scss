@@ -5,7 +5,7 @@
 @import 'reset';
 /*@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,bold&subset=latin,cyrillic);*/
 
-$font-stack: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif; // 'PT Sans Caption', 
+$font-stack: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif; // 'PT Sans Caption',
 
 $bg-color: #fdfdfd; // #159588;
 $fg-color: #666;
@@ -189,36 +189,35 @@ a:hover {
 
 
 /*iPhone 6 Portrait*/
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) { 
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) {
 
 }
 
 /*iPhone 6 landscape*/
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : landscape) { 
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : landscape) {
 
 }
 
 /*iPhone 6+ Portrait*/
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : portrait) { 
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : portrait) {
 
 }
 
 /*iPhone 6+ landscape*/
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : landscape) { 
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : landscape) {
 
 }
 
 /*iPhone 6 and iPhone 6+ portrait and landscape*/
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px){ 
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px){
 }
 
 /*iPhone 6 and iPhone 6+ portrait*/
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) and (orientation : portrait){ 
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) and (orientation : portrait){
 
 }
 
 /*iPhone 6 and iPhone 6+ landscape*/
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) and (orientation : landscape){ 
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) and (orientation : landscape){
 
 }
-
