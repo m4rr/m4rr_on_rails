@@ -13,13 +13,16 @@ mapStyleMyFork = [{"featureType":"administrative.country","elementType":"geometr
 class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from builtin builder
   #override create_marker method
   create_marker: ->
+    console.log 'ass'
     options = _.extend @marker_options(), @rich_marker_options()
     @serviceObject = new RichMarker options #assign marker to @serviceObject
 
   rich_marker_options: ->
+    console.log 'ass'
     marker = document.createElement("div")
     marker.setAttribute 'class', 'marker_container'
-    marker.innerHTML = @args.title
+    console.log @args.title
+    marker.innerHTML = '<div>' + @args.title + '</div>'
     { content: marker }
 
 @buildMap = (markers_arg) ->
@@ -61,7 +64,7 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
       }
     }
   }
-  handler.buildMap { 
+  handler.buildMap {
     provider: {
       zoom: 4,
       center: new google.maps.LatLng(52.31, 13.22),
@@ -78,15 +81,47 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
       },
     }, internal: {id: 'map'} }, ->
     markers = handler.addMarkers(markers_arg)
+    # makeIW markers
     # handler.bounds.extendWith(markers)
     # handler.fitMapToBounds()
-    $('.map_link').click -> 
+
+
+    #
+    # #console.log(markers);
+    for marker in markers
+    # #   marker.map = handler.getMap()
+    #
+    #   # content = document.createElement 'div'
+    #   # content.innerHTML = "<strong>Hello world</strong> + JS ^_^"
+    #   # infowindow = new google.maps.InfoWindow { content: marker.getServiceObject().innerHTML }
+
+
+    #
+    #   # console.log (marker.getServiceObject())
+      google.maps.event.addListener marker.getServiceObject(), 'mouseover', ->
+    #     marker.getServiceObject().infowindow.open handler.getMap(), marker.getServiceObject()
+    # #       # handler.getMap().setZoom(0)
+        # console.log @
+
+        @infowindow = makeIW @title if !@infowindow
+        @infowindow.open handler.getMap(), @
+        return
+    #     console.log(handler.getMap().getBounds().getNorthEast().toString())
+    # #     return
+    #
+
+      google.maps.event.addListener marker.getServiceObject(), 'mouseout', ->
+        @infowindow.close ''
+        return
+    #
+
+    $('.map_link').click ->
       zoom = if handler.getMap().getZoom() == 4 then 0 else 4
       handler.getMap().setZoom(zoom)
 
 # for marker in markers
 #   google.maps.event.addListener marker, 'mouseover', ->
-#     @infowindow.open handler.getMap() marker 
+#     @infowindow.open handler.getMap() marker
 #       # handler.getMap().setZoom(0)
 #     # infowindow.open handler.getMap(), marker
 #     console.log(handler.getMap().getBounds().getNorthEast().toString())
@@ -97,3 +132,29 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
 # handler.event.addListener(marker, 'mouseout', function() {
 #   infowindow.close();
 # })
+
+makeIW = (title) ->
+  content = document.createElement 'div'
+  content.innerHTML = title
+  new google.maps.InfoWindow { content: content }
+
+
+# addHoverHandlers = (markers) ->
+#   # m is Gmap4Rails marker, doc in gmaps4rails.base.js.coffee
+#   for m in markers
+#     # marker is a Google Maps Marker
+#     # https://developers.google.com/maps/documentation/javascript/reference#Marker
+#     marker = m.serviceObject
+#
+#     console.log marker.getPosition().toString()
+#     # Show the infowindow when user mouses-in
+#     google.maps.event.addListener marker, "mouseover", ->
+#       console.log marker.getPosition().toString()
+#       # Loop on Gmaps.map.markers and find the one using this
+#       for m2 in Gmaps.map.markers
+#         if m2.serviceObject == this
+#           m2.infowindow.open m2.serviceObject.map, m2.serviceObject
+#
+#     # Hide the infowindow when user mouses-out
+#     google.maps.event.addListener marker, "mouseout", ->
+#       m.infowindow.close()
