@@ -19,7 +19,7 @@ class WelcomeController < ApplicationController
       Gmaps4rails.build_markers(cities) { |city, marker|
         marker.lat city.latitude
         marker.lng city.longitude
-        marker.infowindow "#{city.country_name_en}: #{city.name_en}"
+        # marker.infowindow "info #{city.country_name_en}: #{city.name_en}"
         marker.title "#{city.country_name_en}: #{city.name_en}"
         marker.json({ title: city.name_en })
         marker.picture({
