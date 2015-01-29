@@ -12,10 +12,12 @@ class WelcomeController < ApplicationController
 
   private
     def visited_cities
-      if City.all.empty?
+      @cities = City.all
+
+      if @cities.empty?
          cities_refresh
       end
-      Gmaps4rails.build_markers(City.all) { |city, marker|
+      Gmaps4rails.build_markers(@cities) { |city, marker|
         marker.lat city.latitude
         marker.lng city.longitude
         marker.infowindow "#{city.country_name_en}: #{city.name_en}"
