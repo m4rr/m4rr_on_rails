@@ -10,9 +10,11 @@ $font-stack: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif; // 'PT Sans
 $bg-color: #fdfdfd; // #159588;
 $fg-color: #666;
 $default-margin: 15px 30px;
+$link: #4D92E0;
 
 html, body, {
   box-shadow: none;
+  color: #666;
   font-family: $font-stack;
   font-size: 14px;
   line-height: 140%;
@@ -63,6 +65,7 @@ nav {
 }
 
 p {
+  color: #999;
   /*margin: 8px 15px;*/
   margin: $default-margin;
   /*text-align: center;*/
@@ -87,6 +90,7 @@ h3 {
 }
 
 strong {
+  color: #666;
   font-weight: bold;
 }
 
@@ -110,12 +114,15 @@ strong {
 }
 
 .eof {
-  margin: 15px;
+  margin: 25px 15px;
   text-align: center;
-}
-
-.eof a {
-  text-decoration: none;
+  a, a:visited {
+    color: #ccc;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #666;
+  }
 }
 
 .icon {
@@ -149,7 +156,7 @@ strong {
 
 
 a, a:visited {
-  color: #5856d6;
+  color: $link;
   text-decoration: none;
 }
 
