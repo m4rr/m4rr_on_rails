@@ -49,9 +49,11 @@ nav {
   -webkit-flex: 1;
           flex: 1;
 
+/*
   box-sizing:border-box;
   -moz-box-sizing:border-box;
   -webkit-box-sizing:border-box;
+*/
 }
 
 .map {
@@ -121,7 +123,9 @@ strong {
 .eof {
   margin: 25px 15px;
   text-align: center;
+  word-spacing: 0;
   a, a:visited {
+    padding: 5px;
     color: #ccc;
     text-decoration: none;
   }
@@ -131,17 +135,16 @@ strong {
   }
 }
 
+/*
 .icon {
   display: inline;
   fill: #ccc;
-  /*opacity: .9;*/
 }
 
 .icon:hover {
   fill: #ff2d55;
-  /*opacity: .7;*/
 }
-
+*/
 
 .likely-wrapper {
   padding: 10px 0;
