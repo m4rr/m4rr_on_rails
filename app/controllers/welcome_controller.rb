@@ -7,20 +7,29 @@ class WelcomeController < ApplicationController
   # check tripster w/o a file
 
   def index
-    @hash = visited_cities
+    @map_json = visited_cities
   end
 
   private
     def visited_cities
+
+      json_file_name = "cities.json"
+
+      if File.exist? json_file_name
+        return File.read(json_file_name)
+      end
+
       cities = City.all
       if cities.empty?
          cities_refresh
       end
-      Gmaps4rails.build_markers(cities) { |city, marker|
+
+      json = Gmaps4rails.build_markers(cities) { |city, marker|
+        title = "#{city.country_name_en}: #{city.name_en}"
         marker.lat city.latitude
         marker.lng city.longitude
         # marker.infowindow "info #{city.country_name_en}: #{city.name_en}"
-        marker.title "#{city.country_name_en}: #{city.name_en}"
+        marker.title title
         marker.json({ title: city.name_en })
         marker.picture({
           :url    => "images/map/marker_one.svg",
@@ -28,7 +37,11 @@ class WelcomeController < ApplicationController
           :height => 20,
           :anchor => [10, 10],
         })
-      }
+      }.to_json
+
+      File.write(json_file_name, json)
+
+      return json
     end
 
     def cities_refresh
