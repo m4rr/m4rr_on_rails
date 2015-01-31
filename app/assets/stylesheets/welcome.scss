@@ -12,6 +12,8 @@ $fg-color: #666;
 $default-margin: 15px 30px;
 $link: #4D92E0;
 
+* {-webkit-font-smoothing:subpixel-antialiased;}
+
 html, body, {
   box-shadow: none;
   color: #666;
@@ -27,7 +29,6 @@ html, body, {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
-
 }
 
 .container {
@@ -49,11 +50,9 @@ nav {
   -webkit-flex: 1;
           flex: 1;
 
-/*
   box-sizing:border-box;
   -moz-box-sizing:border-box;
   -webkit-box-sizing:border-box;
-*/
 }
 
 .map {
