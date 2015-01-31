@@ -2,8 +2,8 @@
 <script src="//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" type="text/javascript"></script>
 
 <div class="container">
-  <div id="map" class="map"></div>
-  <nav>
+  <div id="map" class="map fade-in three"></div>
+  <nav class="fade-in one">
     <h1>Marat Saytakov</h1>
     <h2>iOS developer,<br />hobbyist designer and traveller.</h2>
 
@@ -37,7 +37,7 @@
     <a href="http://www.ocloudesign.com/sochi-safety-guide/" class="to-right">ocloudesign.com</a>
     </p>
 
-    <div class="likely-wrapper">
+    <div class="likely-wrapper fade-in two">
       <div class="likely likely-small">
         <div class="twitter" data-via="m4rr">tweet</div>
         <div class="facebook">share</div>
@@ -49,5 +49,7 @@
 </div>
 
 <script type="text/javascript">
-  buildMap(<%= raw @map_json %>);
+  $().ready(function(){
+    buildMap(<%= raw @map_json %>);
+  });
 </script>
