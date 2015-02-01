@@ -16,13 +16,13 @@ class WelcomeController < ApplicationController
       json_file_name = "public/cities.json"
 
       if File.exist? json_file_name
-        # return File.read(json_file_name)
+        return File.read(json_file_name)
       end
 
       cities = City.all
-      # if cities.empty?
+      if cities.empty?
          cities_refresh
-      # end
+      end
 
       json = Gmaps4rails.build_markers(cities) { |city, marker|
         title = "#{city.country_name_en}: #{city.name_en}"
