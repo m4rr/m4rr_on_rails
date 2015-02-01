@@ -10,6 +10,7 @@ $font-stack: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif; // 'PT Sans
 $bg-color: #fdfdfd; // #159588;
 $fg-color: #666;
 $default-margin: 15px 30px;
+$mobile-margin: 15px 20px;
 $link: #4D92E0;
 
 * {-webkit-font-smoothing:subpixel-antialiased;}
@@ -191,7 +192,7 @@ a:hover {
   white-space: nowrap;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .container {
     -webkit-flex: none;
             flex: none;
@@ -212,6 +213,9 @@ a:hover {
 
     -webkit-flex: none;
             flex: none;
+  }
+  p {
+    margin: $mobile-margin;
   }
   .likely-wrapper {
     display: none;
