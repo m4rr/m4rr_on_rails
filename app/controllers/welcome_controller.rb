@@ -13,7 +13,7 @@ class WelcomeController < ApplicationController
   private
     def visited_cities
 
-      json_file_name = "cities.json"
+      json_file_name = "public/cities.json"
 
       if File.exist? json_file_name
         return File.read(json_file_name)
