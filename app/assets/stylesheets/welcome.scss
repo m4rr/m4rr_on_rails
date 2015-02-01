@@ -150,6 +150,7 @@ strong {
 */
 
 .likely-wrapper {
+  display: block;
   padding: 5px 0;
   position: absolute;
 
@@ -192,8 +193,8 @@ a:hover {
 
 @media (max-width: 600px) {
   .container {
-  -webkit-flex: none;
-          flex: none;
+    -webkit-flex: none;
+            flex: none;
   }
   .map {
     width: 100%;
@@ -213,6 +214,7 @@ a:hover {
             flex: none;
   }
   .likely-wrapper {
+    display: none;
     position: relative;
   }
 }
