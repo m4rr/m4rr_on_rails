@@ -150,7 +150,7 @@ strong {
 */
 
 .likely-wrapper {
-  padding: 10px 0;
+  padding: 5px 0;
   position: absolute;
 
   bottom: 0;
@@ -212,6 +212,10 @@ a:hover {
     -webkit-flex: none;
             flex: none;
   }
+  .likely-wrapper {
+    position: relative;
+  }
+}
 }
 
 
