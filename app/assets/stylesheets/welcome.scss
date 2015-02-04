@@ -274,6 +274,34 @@ a:hover {
 
 
 
+
+
+
+
+// map
+.cluster{ position:relative; z-index:10; font:bold 14px/30px 'Roboto', 'Helvetica', sans-serif; color:#fff; background:url(/images/map/marker_cluster.svg) no-repeat 50%; background-size:cover; text-align:center; }
+.cluster1{ width:30px; height:30px; }
+.cluster2{ width:35px; height:35px; font-size:15px; line-height:35px; }
+.cluster3{ width:40px; height:40px; font-size:16px; line-height:40px; }
+.tooltip{ position:relative; z-index:1; width:160px; font:13px 'Roboto', 'Helvetica', sans-serif; color:#333; text-align:center; opacity:0; transform:translate(0, -20px); transition:.3s; }
+.tooltip.show{ transform:translate(0, 0); opacity:1; }
+.tooltip div{ position:absolute; left:0; right:0; bottom:0; }
+.tooltip span{ position:relative; display:inline-block; padding:5px 10px; border-radius:4px; background:rgba(255,255,255,1.0); box-shadow:0 0 3px rgba(0,0,0,.3); }
+.tooltip span:before{ content:''; position:absolute; left:50%; top:100%; margin:0 -6px; border:6px solid transparent; border-top-color:rgba(0,0,0,.1); }
+.tooltip span:after{ content:''; position:absolute; left:50%; top:100%; margin:0 -5px; border:5px solid transparent; border-top-color:rgba(255,255,255,.9); }
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*iPhone 6 Portrait*/
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) {
 }
