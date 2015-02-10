@@ -29,7 +29,7 @@ class WelcomeController < ApplicationController
 
     def build_markers_json
       cities_array = Array.new
-      cities = City.all
+      # cities = City.all
       cities = cities_refresh if cities.nil? || cities.empty?
       cities.each { |city|
         cities_array << {
