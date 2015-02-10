@@ -1,10 +1,11 @@
 class WelcomeController < ApplicationController
 
 # todo:
-  # map pins
   # foursquare api
-  # likely to bottom
   # check tripster w/o a file
+
+  # has_many
+  # http://web.archive.org/web/20100210204319/http://blog.hasmanythrough.com/2008/2/27/count-length-size
 
   def index
     @map_json = visited_cities
