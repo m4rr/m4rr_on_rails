@@ -17,42 +17,35 @@ class WelcomeController < ApplicationController
   end
 
   private
+
+    @@cities_json_filename   = 'public/cities.json'
+    @@tripster_xml_filename  = 'public/m4rr-tripster-data-basic.xml'
+    @@iso_3166_json_filename = 'public/iso-3166-countries-list.json'
+
     def visited_cities
+      return File.read(@@cities_json_filename) if File.exist? @@cities_json_filename
+      return build_markers_json
+    end
 
-      json_file_name = "public/cities.json"
-
-      if File.exist? json_file_name
-        return File.read(json_file_name)
-      end
-
+    def build_markers_json
+      cities_array = Array.new
       cities = City.all
-      if cities.empty?
-         cities_refresh
-      end
-
-      json = Gmaps4rails.build_markers(cities) { |city, marker|
-        title = "#{city.country_name_en}: #{city.name_en}"
-        marker.lat city.latitude
-        marker.lng city.longitude
-        # marker.infowindow "info #{city.country_name_en}: #{city.name_en}"
-        marker.title title
-        marker.json({ title: city.name_en })
-        marker.picture({
-          :url    => "images/map/marker_one.svg",
-          :width  => 20,
-          :height => 20,
-          :anchor => [10, 10],
-        })
-      }.to_json
-
-      File.write(json_file_name, json)
-
-      return json
+      cities = cities_refresh if cities.nil? || cities.empty?
+      cities.each { |city|
+        cities_array << {
+          lat: city.latitude,
+          lng: city.longitude,
+          title: "#{city.name_en}",
+          # title_full: "#{city.country_name_en}: #{city.name_en}",
+        }
+      }
+      File.write(@@cities_json_filename, cities_array.to_json)
+      cities_array.to_json
     end
 
     def cities_refresh
       City.delete_all
-      Nokogiri::XML(File.read("public/m4rr-tripster-data-basic.xml"))
+      Nokogiri::XML(File.read(@@tripster_xml_filename))
       .xpath("//data/cities/city").each { |e|
         id  = e.xpath("@country_id").to_s
         ru  = e.xpath("@title_ru").to_s
@@ -69,12 +62,11 @@ class WelcomeController < ApplicationController
           :country_name_en => country_name_en
         ).save
       }
+      City.all
     end
 
     def country_name_by(abbr)
-      if @countries_list == nil
-         @countries_list = JSON.parse(File.read('public/iso-3166-countries-list.json'))
-      end
+      @countries_list = JSON.parse(File.read(@@iso_3166_json_filename)) if @countries_list.nil?
       @countries_list.select { |e| e['alpha-2'] == abbr }.first['name']
     end
 
