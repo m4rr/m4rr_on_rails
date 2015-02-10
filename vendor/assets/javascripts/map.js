@@ -36,7 +36,7 @@ function buildMap(markers){
                                 var
                                     titles = $.map(context.data.markers, function(marker){
                                         return marker.data.title;     
-                                    });
+                                    }).sort();
                                 $(this).gmap3(
                                     {clear: {tag: 'tooltip2'}},
                                     {
