@@ -11,6 +11,11 @@ class WelcomeController < ApplicationController
     @map_json = visited_cities
   end
 
+  def sync # PATCH?
+    # rm cities_json_filename
+    # force refresh cities
+  end
+
   private
     def visited_cities
 
