@@ -97,7 +97,11 @@ function buildMap(markers){
                         infowindow: marker.infowindow
                     },
                     options: {
-                        icon: marker.picture.url
+                        icon: new google.maps.MarkerImage('images/map/marker_one.svg',
+                            new google.maps.Size(  20, 20), // icon size
+                            new google.maps.Point(  0,  0), // origin
+                            new google.maps.Point( 10, 10)  // anchor
+                        )
                     }
                 }           
             });
