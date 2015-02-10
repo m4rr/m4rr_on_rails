@@ -103,7 +103,7 @@ function buildMap(markers){
                             new google.maps.Point( 10, 10)  // anchor
                         )
                     }
-                }           
+                }   
             });
         }
         
