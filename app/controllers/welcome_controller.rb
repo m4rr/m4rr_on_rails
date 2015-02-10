@@ -23,7 +23,7 @@ class WelcomeController < ApplicationController
     @@iso_3166_json_filename = 'public/iso-3166-countries-list.json'
 
     def visited_cities
-      return File.read(@@cities_json_filename) if File.exist? @@cities_json_filename
+      # return File.read(@@cities_json_filename) if File.exist? @@cities_json_filename
       return build_markers_json
     end
 
