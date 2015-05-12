@@ -28,6 +28,12 @@ class WelcomeController < ApplicationController
     @@iso_3166_json_filename = 'public/iso-3166-countries-list.json'
 
     def visited_cities
+
+      @countries_count = City.group(:country_alpha2).count.count
+      @cities_count    = City.count
+      @ru_cities_count = City.where(country_alpha2: 'RU').count
+      @us_cities_count = City.where(country_alpha2: 'US').count
+
       return File.read(@@cities_json_filename) if File.exist? @@cities_json_filename
       return build_markers_json
     end
