@@ -3,6 +3,7 @@ require 'open-uri'
 class WelcomeController < ApplicationController
 
 # todo:
+  # countries stat by COUNT OF GROUP BY country 
   # foursquare api
   # check tripster w/o a file
 
