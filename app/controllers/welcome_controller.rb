@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class WelcomeController < ApplicationController
 
 # todo:
@@ -14,6 +16,9 @@ class WelcomeController < ApplicationController
   def sync # PATCH?
     # rm cities_json_filename
     # force refresh cities
+    cities_refresh(true)
+    build_markers_json
+    redirect_to action: "index"
   end
 
   private
@@ -43,10 +48,16 @@ class WelcomeController < ApplicationController
       cities_array.to_json
     end
 
-    def cities_refresh
+    def cities_refresh(force=false)
       City.delete_all
-      Nokogiri::XML(File.read(@@tripster_xml_filename))
-      .xpath("//data/cities/city").each { |e|
+
+      if force
+        xml_content = Nokogiri::HTML(open('http://tripster.ru/api/users/m4rr/basic/?213'))
+      else
+        xml_content = Nokogiri::XML(File.read(@@tripster_xml_filename))        
+      end
+
+      xml_content.xpath("//data/cities/city").each { |e|
         id  = e.xpath("@country_id").to_s
         ru  = e.xpath("@title_ru").to_s
         en  = e.xpath("@title_en").to_s
