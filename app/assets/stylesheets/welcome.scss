@@ -11,7 +11,8 @@ $bg-color: #fdfdfd; // #159588;
 $fg-color: #666;
 $default-margin: 15px 30px;
 $mobile-margin: 15px 20px;
-$link: #4D92E0;
+$link: #4D92E0; // blue
+$link-half: rgba(255, 45, 85, .5); // half of red
 
 * {-webkit-font-smoothing:subpixel-antialiased;}
 
@@ -203,9 +204,12 @@ a.appstore {
 }
 
 a.appstore:hover {
-  border: 1px solid $link;
-  border-color: #ff2d55;
+  border: 1px solid $link-half;
+  /*border-color: #ff2d55;*/
   text-decoration: none;
+
+  -webkit-background-clip: padding-box; /* for Safari */
+  background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
 }
 
 .gm-style-iw {
