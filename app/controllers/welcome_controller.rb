@@ -57,12 +57,7 @@ class WelcomeController < ApplicationController
     def cities_refresh(force=false)
       City.delete_all
 
-      if force
-        xml_content = Nokogiri::HTML(open('http://tripster.ru/api/users/m4rr/basic/?213'))
-      else
-        xml_content = Nokogiri::XML(File.read(@@tripster_xml_filename))        
-      end
-
+      xml_content = force ? load_content_from_internet : load_content_from_local_file
       xml_content.xpath("//data/cities/city").each { |e|
         id  = e.xpath("@country_id").to_s
         ru  = e.xpath("@title_ru").to_s
@@ -80,6 +75,14 @@ class WelcomeController < ApplicationController
         ).save
       }
       City.all
+    end
+
+    def load_content_from_local_file
+      Nokogiri::XML(File.read(Tripster_xml_filename))
+    end
+
+    def load_content_from_internet
+      Nokogiri::HTML(open('http://tripster.ru/api/users/m4rr/basic/?213'))
     end
 
     def country_name_by(abbr)
