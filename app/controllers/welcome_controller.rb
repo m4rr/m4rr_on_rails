@@ -15,9 +15,7 @@ class WelcomeController < ApplicationController
   end
 
   def sync # PATCH?
-    # rm cities_json_filename
-    # force refresh cities
-    cities_refresh(true)
+    cities_refresh(true) # force refresh cities: download new data file
     build_markers_json
     redirect_to action: "index"
   end
