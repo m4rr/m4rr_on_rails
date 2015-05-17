@@ -24,18 +24,17 @@ class WelcomeController < ApplicationController
 
   private
 
-    @@cities_json_filename   = 'public/cities.json'
-    @@tripster_xml_filename  = 'public/m4rr-tripster-data-basic.xml'
-    @@iso_3166_json_filename = 'public/iso-3166-countries-list.json'
+    Cities_json_filename   = 'public/cities.json'
+    Tripster_xml_filename  = 'public/m4rr-tripster-data-basic.xml'
+    ISO_3166_json_filename = 'public/iso-3166-countries-list.json'
 
     def visited_cities
-
       @countries_count = City.group(:country_alpha2).count.count
       @cities_count    = City.count
       @ru_cities_count = City.where(country_alpha2: 'RU').count
       @us_cities_count = City.where(country_alpha2: 'US').count
 
-      return File.read(@@cities_json_filename) if File.exist? @@cities_json_filename
+      return File.read(Cities_json_filename) if File.exist? Cities_json_filename
       return build_markers_json
     end
 
@@ -51,7 +50,7 @@ class WelcomeController < ApplicationController
           # title_full: "#{city.country_name_en}: #{city.name_en}",
         }
       }
-      File.write(@@cities_json_filename, cities_array.to_json)
+      File.write(Cities_json_filename, cities_array.to_json)
       cities_array.to_json
     end
 
@@ -84,7 +83,7 @@ class WelcomeController < ApplicationController
     end
 
     def country_name_by(abbr)
-      @countries_list = JSON.parse(File.read(@@iso_3166_json_filename)) if @countries_list.nil?
+      @countries_list = JSON.parse(File.read(ISO_3166_json_filename)) if @countries_list.nil?
       @countries_list.select { |e| e['alpha-2'] == abbr }.first['name']
     end
 
