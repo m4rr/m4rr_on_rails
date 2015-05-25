@@ -16,5 +16,5 @@
 // require gmaps/google
 //= require gmap3.min
 //= require map
-//= require likely
+// require likely
 //= require_tree .
