@@ -43,7 +43,7 @@ group :development, :test do
   gem 'spring'
 end
 
-gem 'nokogiri' # xml parsing
+gem 'nokogiri', '~> 1.6.6.2' # xml parsing
 
 gem 'geocoder'
 # gem 'gmaps4rails' # google maps
