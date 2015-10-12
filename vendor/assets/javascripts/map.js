@@ -7,10 +7,10 @@ function buildMap(markers){
                 map: {
                     options: {
                         zoom: 4,
-                        // center: new google.maps.LatLng(52.31, 13.22), // berlin
                         center: new google.maps.LatLng(56.9475, 24.106944), // riga
-                      //center: new google.maps.LatLng(43.541050, -40.602783), // atl ocean
-                      //center: new google.maps.LatLng(51.51, 0), // london
+                        // center: new google.maps.LatLng(52.31, 13.22), // berlin
+                        // center: new google.maps.LatLng(43.541050, -40.602783), // atl ocean
+                        // center: new google.maps.LatLng(51.51, 0), // london
                         styles: mapStyleMyFork,
                         disableDefaultUI: true,
                         mapTypeControl: false,
