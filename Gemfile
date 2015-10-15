@@ -11,9 +11,6 @@ gem 'nokogiri' # xml parsing
 gem 'geocoder'
 
 group :development, :test do
-  gem 'therubyracer', platforms: :ruby
-  gem 'rack-ssl-enforcer'
-  gem 'turbolinks'
   gem 'sdoc', '~> 0.4.0', group: :doc
   gem 'byebug'
   gem 'web-console', '~> 2.0'
@@ -21,5 +18,7 @@ group :development, :test do
 end
 
 group :production do
-
+  gem 'therubyracer', platforms: :ruby
+  gem 'rack-ssl-enforcer'
+  gem 'turbolinks'
 end
