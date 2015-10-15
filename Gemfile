@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'nokogiri' # xml parsing
 gem 'geocoder'
+gem 'turbolinks'
 
 group :development, :test do
   gem 'sdoc', '~> 0.4.0', group: :doc
@@ -20,5 +21,4 @@ end
 group :production do
   gem 'therubyracer', platforms: :ruby
   gem 'rack-ssl-enforcer'
-  gem 'turbolinks'
 end
