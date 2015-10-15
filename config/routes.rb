@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :beta
+
   # resources :articles do
   #   resources :comments
   # end
