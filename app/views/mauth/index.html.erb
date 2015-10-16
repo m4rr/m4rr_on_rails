@@ -1,0 +1,12 @@
+<div id="content">
+
+  <%= form_for @betum, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+    <%= f.text_field :first_name, placeholder: 'Имя' %>
+    <%= f.text_field :last_name, placeholder: 'Фамилия' %>
+    <%= f.text_field :email, placeholder: 'Почта' %>
+    <%= f.text_field :desc, placeholder: 'Tell me' %>
+
+    <%= f.submit "Create" %>
+  <% end %>
+
+</div>
