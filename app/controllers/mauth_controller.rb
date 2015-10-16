@@ -13,6 +13,7 @@ class MauthController < ApplicationController
   # GET /beta/1
   # GET /beta/1.json
   def show
+
   end
 
   # GET /beta/new
@@ -21,8 +22,9 @@ class MauthController < ApplicationController
   end
 
   # GET /beta/1/edit
-  def edit
-  end
+  # def edit
+  #
+  # end
 
   # POST /beta
   # POST /beta.json
@@ -31,38 +33,38 @@ class MauthController < ApplicationController
 
     respond_to do |format|
       if @betum.save
-        # format.html { redirect_to @betum, notice: 'Betum was successfully created.' }
-        format.json { render :show, status: :created, location: @betum }
+        # format.html { redirect_to :betum_index, notice: 'Betum ' + @betum.id.to_s + ' was successfully created.' }
+        format.js # on { render :show, status: :created, location: @betum }
       else
         # format.html { render :new }
-        format.json { render json: @betum.errors, status: :unprocessable_entity }
+        # format.json { render json: @betum.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # PATCH/PUT /beta/1
   # PATCH/PUT /beta/1.json
-  def update
-    respond_to do |format|
-      if @betum.update(betum_params)
-        format.html { redirect_to @betum, notice: 'Betum was successfully updated.' }
-        format.json { render :show, status: :ok, location: @betum }
-      else
-        format.html { render :edit }
-        format.json { render json: @betum.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @betum.update(betum_params)
+  #       format.html { redirect_to @betum, notice: 'Betum was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @betum }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @betum.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /beta/1
   # DELETE /beta/1.json
-  def destroy
-    @betum.destroy
-    respond_to do |format|
-      format.html { redirect_to beta_url, notice: 'Betum was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  # def destroy
+  #   @betum.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to beta_url, notice: 'Betum was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -74,9 +76,5 @@ class MauthController < ApplicationController
     def betum_params
       params.require(:betum).permit(:first_name, :last_name, :email, :desc)
     end
-
-
-
-
 
 end

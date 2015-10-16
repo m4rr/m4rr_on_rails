@@ -22,11 +22,11 @@ body {
   padding-top: 100px;
 }
 
-br { display: block; line-height: 1.6em; } 
+br { display: block; line-height: 1.6em; }
 
-input, textarea { 
+input, textarea {
   -webkit-font-smoothing: antialiased;
-  outline: none; 
+  outline: none;
 }
 
 strong, b { font-weight: bold; }
@@ -41,6 +41,10 @@ h1 {
   margin: 10px 0;
   color: #555;
   // text-shadow: 1px 1px 0 #fff;
+}
+
+p {
+  font-size: 15px;
 }
 
 
@@ -63,14 +67,14 @@ h1 {
   // height: 500px;
 
   .wrapper {
-    width: 70%;
+    // width: 70%;
   }
 
   .nifty_form {
+      // width: 100%;
 
     input[type=text], textarea {
 
-      width: 100%;
 
       font-size: 16px;
       // margin: 0 0 10px 0;
@@ -93,6 +97,10 @@ h1 {
       border: 1px solid rgba(81, 203, 238, 1);
     }
 
+    .field {
+      font-size: 15px;
+      margin-top: 10px;
+    }
 
 
   }
@@ -101,17 +109,17 @@ h1 {
 
 
 
-@media only screen 
+@media only screen
     and (min-device-width : 375px) // or 213.4375em
     and (max-device-width : 667px) // or 41.6875em
     and (width : 375px) // or 23.4375em
     and (height : 559px) // or 34.9375em
-    and (orientation : portrait) 
+    and (orientation : portrait)
     and (color : 8)
     and (device-aspect-ratio : 375/667)
     and (aspect-ratio : 375/559)
     and (device-pixel-ratio : 2)
-    and (-webkit-min-device-pixel-ratio : 2) { 
+    and (-webkit-min-device-pixel-ratio : 2) {
 
       body {
           padding-top: 0px;
@@ -126,23 +134,3 @@ h1 {
 
       }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
