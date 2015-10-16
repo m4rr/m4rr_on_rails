@@ -1,12 +1,41 @@
 <div id="content">
+  <div class="wrapper">
+    <h1>Sign up</h1>
+    <%= form_for @betum, url: {action: "create"}, remote: true, html: {class: "nifty_form"} do |f| %>
 
-  <%= form_for @betum, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
-    <%= f.text_field :first_name, placeholder: 'Имя' %>
-    <%= f.text_field :last_name, placeholder: 'Фамилия' %>
-    <%= f.text_field :email, placeholder: 'Почта' %>
-    <%= f.text_field :desc, placeholder: 'Tell me' %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
-    <%= f.submit "Create" %>
-  <% end %>
+    <% if @betum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@betum.errors.count, "error") %> prohibited this betum from being saved:</h2>
 
+      <ul>
+        <% @betum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :first_name %><br>
+      <%= f.text_field :first_name, placeholder: 'Имя' %> <br />
+    </div>
+    <div class="field">
+      <%= f.label :last_name %><br>
+      <%= f.text_field :last_name, placeholder: 'Фамилия' %> <br />
+    </div>
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.text_field :email, placeholder: 'Почта' %> <br />
+    </div>
+    <div class="field">
+      <%= f.label :desc, value: 'Расскажите в двух предложениях, почему именно вы должны получить доступ к приложению' %><br>
+      <%= f.text_area :desc, size: '30x3' %> <br />
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+    <% end %>
+  </div>
 </div>
