@@ -1,6 +1,16 @@
 class MauthController < ApplicationController
   layout 'mauth'
   before_action :set_betum, only: [:show, :edit, :update, :destroy]
+  # before_action :authenticate_user!, :except => [:index]
+
+  def sanmarco
+    @auth = params[:guid] == ':authenticate_user!'
+    if @auth
+      # download csv
+    else
+      # ihre passe bitte
+    end
+  end
 
   # GET /beta
   # GET /beta.json
