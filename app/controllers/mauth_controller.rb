@@ -77,14 +77,14 @@ class MauthController < ApplicationController
   # end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_betum
-      @betum = Betum.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def betum_params
-      params.require(:betum).permit(:first_name, :last_name, :email, :desc)
-    end
+  def set_betum
+    @betum = Betum.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def betum_params
+    params.require(:betum).permit(:first_name, :last_name, :email, :desc)
+  end
 
 end
