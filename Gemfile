@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'nokogiri' # xml parsing
 gem 'geocoder'
 gem 'turbolinks'
+gem 'metamagic'
 
 group :development, :test do
   gem 'sdoc', '~> 0.4.0', group: :doc

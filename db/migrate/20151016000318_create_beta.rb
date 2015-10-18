@@ -5,6 +5,7 @@ class CreateBeta < ActiveRecord::Migration
       t.string :last_name
       t.string :email
       t.string :desc
+      t.string :how_did_you_know
 
       t.timestamps null: false
     end

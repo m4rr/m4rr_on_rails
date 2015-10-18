@@ -6,7 +6,15 @@ class MauthController < ApplicationController
   def sanmarco
     @auth = params[:guid] == ':authenticate_user!'
     if @auth
-      # download csv
+      @alle = Betum.all
+      if params[:csv] == 'csv'
+        csv_string = CSV.generate do |csv|
+          @alle.each { |e| 
+            csv << [e.first_name, e.last_name, e.email]
+          }
+        end
+        send_data csv_string, :type=> 'text/csv', :filename => 'tester_import.csv'
+      end
     else
       # ihre passe bitte
     end
@@ -46,11 +54,30 @@ class MauthController < ApplicationController
         # format.html { redirect_to :betum_index, notice: 'Betum ' + @betum.id.to_s + ' was successfully created.' }
         format.js # on { render :show, status: :created, location: @betum }
       else
-        # format.html { render :new }
-        # format.json { render json: @betum.errors, status: :unprocessable_entity }
-      end
+        # format.html { render :index }
+        format.js { render :error, status: :unprocessable_entity }
+        # format.js { render partial: @betum.errors, status: :unprocessable_entity }
+
+
+      #   format.js { render
+      #   # raw javascript to be executed on client-side
+      #   "alert('Hello Rails');"
+      #   # send HTTP response code on header
+      #   :status => 404, # page not found,
+      #   # load /app/views/your-controller/different_action.js.erb
+      #   # :action => "different_action",
+      #   # send json file with @line_item variable as json
+      #   # :json => @line_item,
+      #   # :file => filename,
+      #   :text => "OK"
+      #   # the :location option to set the HTTP Location header
+      #   # :location => path_to_controller_method_url(argument)
+      # }
+
+
     end
   end
+end
 
   # PATCH/PUT /beta/1
   # PATCH/PUT /beta/1.json
@@ -84,7 +111,7 @@ class MauthController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def betum_params
-    params.require(:betum).permit(:first_name, :last_name, :email, :desc)
+    params.require(:betum).permit(:first_name, :last_name, :email, :desc, :how_did_you_know)
   end
 
 end

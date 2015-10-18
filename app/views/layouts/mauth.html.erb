@@ -1,11 +1,16 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Mauth beta</title>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta property="og:image" content="<%= asset_path 'mauth@2x.png' %>" />
+
+  <%= metamagic %>
 
   <%= stylesheet_link_tag :mauth, media: 'all' %>
   <%= javascript_include_tag :mauth %>
+
+  <%= javascript_include_tag 'likely.js', media: 'all' %>
+  <%= stylesheet_link_tag 'likely.css', media: 'all' %>
 
   <%= csrf_meta_tags %>
 

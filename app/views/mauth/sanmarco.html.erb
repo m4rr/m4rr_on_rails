@@ -1,5 +1,9 @@
 <% if @auth %>
   <h1>OKAY</h1>
+  <%= link_to 'tester_import.csv', request.parameters.merge({:csv => 'csv'}) %>
+  <ol>
+    <%= render @alle %>
+  </ol>
 <% else %>
-  <h1>Ihre passe bitte!</h1>
+  <h1>Ihre passe, bitte!</h1>
 <% end %>

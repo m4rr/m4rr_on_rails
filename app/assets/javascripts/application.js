@@ -13,9 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-// require underscore
-// require gmaps/google
 //= require gmap3.min
 //= require map
-// require likely
-//= require_tree .
+//= require_tree . 
+//= stub mauth
