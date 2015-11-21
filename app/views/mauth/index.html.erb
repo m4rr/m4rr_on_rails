@@ -13,52 +13,12 @@ og   image: asset_path('mauth@2x.png')
     <%= link_to 'https://blog.m4rr.ru/all/mauth/' do %>
       <%= image_tag 'mauth@2x.png', size: '60', class: 'h1img', alt: 'mauth beta' %>
     <% end %>
-    <p id="got-it"></p>
 
     <%= render "likely" %>
-
-    <%= form_for @betum, url: {action: "create"}, remote: true, html: {class: "nifty_form"} do |f| %>
     <%= link_to 'https://itunes.apple.com/ru/app/moscow-metro-wi-fi-authorization/id1041801794?l=en&mt=8', class: 'app-store-link' do %>
       <%= image_tag 'https://blog.m4rr.ru/pictures/Download_on_the_App_Store@2x.png', size: '203x60', alt: 'mauth on the App Store' %>
-      <% end %>
-
-    <% if @betum.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@betum.errors.count, "error") %> prohibited this betum from being saved:</h2>
-      <ul>
-        <% @betum.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
     <% end %>
 
-    <div class="field">
-      <!-- <%= f.label :first_name %><br> -->
-      <%= f.text_field :first_name, placeholder: 'Имя' %> <br />
-    </div>
-    <div class="field">
-      <!-- <%= f.label :last_name %><br> -->
-      <%= f.text_field :last_name, placeholder: 'Фамилия' %> <br />
-    </div>
-    <div class="field">
-      <!-- <%= f.label :email %><br> -->
-      <%= f.text_field :email, placeholder: 'Почта' %> <br />
-    </div>
-    <div class="field">
-      <%= f.label :how_did_you_know, 'Откуда вы узнали об этой штуке?' %><br>
-      <%= f.text_field :how_did_you_know %> <br />
-    </div>
-    <div class="field">
-      <%= f.label :desc, 'Расскажите в двух предложениях, почему именно вы должны получить доступ к приложению' %><br>
-      <%= f.text_area :desc, size: '30x3' %> <br />
-    </div>
-
-    <div class="actions">
-      <%= f.submit 'I\'m Feeling Lucky', class: 'cupid-green' %>
-    </div>
-    <% end %>
-    
   </div>
 </div>
 
