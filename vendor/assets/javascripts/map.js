@@ -1,3 +1,5 @@
+// https://snazzymaps.com/style/5263/lighter-monochrome-fork
+
 function buildMap(markers){
     $(function(){
         markers = transformMarkers(markers);
