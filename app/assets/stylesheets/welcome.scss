@@ -109,8 +109,11 @@ p.app {
 }
 
 strong {
-  color: #666;
   font-weight: bold;
+}
+
+p.app strong {
+  color: #666;
 }
 
 .to-left {
