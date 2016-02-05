@@ -23,7 +23,7 @@ class WelcomeController < ApplicationController
   def sync # PATCH?
     load_and_parse_tripster
  
-    redirect_to action: "index"
+    redirect_to action: :index
   end
 
   private
@@ -46,20 +46,18 @@ class WelcomeController < ApplicationController
     end
 
     def load_and_parse_tripster
-      if doc = load_content_from_internet
-        City.delete_all
+      City.delete_all
 
-        doc.xpath("//data/cities/city").each do |e|
-          alpha2  = e.xpath("@country_id").to_s
-          City.new(
-            name_en: e.xpath("@title_en").to_s,
-            name_ru: e.xpath("@title_ru").to_s,
-            latitude:  e.xpath("@lat").to_s.to_f,
-            longitude: e.xpath("@lon").to_s.to_f,
-            country_alpha2:  alpha2,
-            country_name_en: country_name_by(alpha2)
+      load_content_from_internet.xpath("//data/cities/city").each do |e|
+        alpha2  = e.xpath("@country_id").to_s
+        City.new(
+          name_en: e.xpath("@title_en").to_s,
+          name_ru: e.xpath("@title_ru").to_s,
+          latitude:  e.xpath("@lat").to_s.to_f,
+          longitude: e.xpath("@lon").to_s.to_f,
+          country_alpha2:  alpha2,
+          country_name_en: country_name_by(alpha2)
           ).save
-        end
       end
     end
 
