@@ -17,7 +17,7 @@ class WelcomeController < ApplicationController
     @us_cities_count = City.where( country_alpha2: 'US').count
     @countries_count = City.group(:country_alpha2).count.count
 
-    @map_json = markers_json
+    @map_json = cities_json
   end
 
   def sync # covered by http auth
@@ -28,14 +28,12 @@ class WelcomeController < ApplicationController
 
   private
 
-    def markers_json
-      cities = []
-
+    def cities_json
       City.all.each do |city|
-        cities << { lat: city.latitude, lng: city.longitude, title: city.name_en }
+        (@cities ||= []) << { lat: city.latitude, lng: city.longitude, title: city.name_en }
       end
 
-      cities.to_json
+      @cities.to_json
     end
 
     def load_and_parse_tripster
@@ -58,7 +56,7 @@ class WelcomeController < ApplicationController
     ISO_3166_Filename = 'public/iso-3166-countries-list.json'
 
     def from_the_internets
-      Nokogiri::HTML(open(Tripster_Data_URL + '?' + rand(1000).to_s))
+      Nokogiri.parse open(Tripster_Data_URL + "?#{rand(1000)}")
     end
 
     def country_name_by abbr
