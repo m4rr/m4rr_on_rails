@@ -15,7 +15,7 @@ class WelcomeController < ApplicationController
   end
 
   def sync # covered by http basic auth
-    load_and_parse_tripster
+    parse_tripster
 
     redirect_to action: :index
   end
@@ -30,7 +30,7 @@ class WelcomeController < ApplicationController
       @cities.to_json
     end
 
-    def load_and_parse_tripster
+    def parse_tripster
       City.delete_all
 
       from_the_internets.xpath('//data/cities/city').each do |e|
