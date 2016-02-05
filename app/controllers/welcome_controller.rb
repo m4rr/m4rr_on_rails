@@ -34,7 +34,7 @@ class WelcomeController < ApplicationController
       City.delete_all
 
       from_the_internets.xpath('//data/cities/city').each do |e|
-        alpha2  = e.xpath('@country_id').to_s
+        alpha2 = e.xpath('@country_id').to_s
         City.new(
           name_en: e.xpath('@title_en').to_s,
           name_ru: e.xpath('@title_ru').to_s,
@@ -46,15 +46,16 @@ class WelcomeController < ApplicationController
       end
     end
 
-    Tripster_Data_URL = 'http://tripster.ru/api/users/m4rr/basic/'
-    ISO_3166_Filename = 'public/iso-3166-countries-list.json'
+    Tripster_URL  = 'http://tripster.ru/api/users/m4rr/basic/?'
+    Tripster_XML  = 'public/m4rr-tripster-data-basic.xml'
+    ISO_3166_JSON = 'public/iso-3166-countries-list.json'
 
     def from_the_internets
-      Nokogiri.parse open(Tripster_Data_URL + "?#{rand(1000)}")
+      Nokogiri.parse open(Tripster_URL + rand(1000).to_s)
     end
 
     def country_name_by abbr
-      @countries_list = JSON.parse(File.read(ISO_3166_Filename)) if @countries_list.nil?
+      @countries_list = JSON.parse(File.read ISO_3166_JSON) if @countries_list.nil?
       @countries_list.select { |e| e['alpha-2'] == abbr }.first['name']
     end
 
