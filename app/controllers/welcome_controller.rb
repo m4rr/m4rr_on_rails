@@ -28,11 +28,6 @@ class WelcomeController < ApplicationController
 
   private
 
-    Tripster_Data_URL = 'http://tripster.ru/api/users/m4rr/basic/'
-    ISO_3166_Filename = 'public/iso-3166-countries-list.json'
-
-    # https://www.refactor.io/q/7ed1271f18
-
     def markers_json
       cities = []
 
@@ -46,24 +41,27 @@ class WelcomeController < ApplicationController
     def load_and_parse_tripster
       City.delete_all
 
-      from_the_internets.xpath("//data/cities/city").each do |e|
-        alpha2  = e.xpath("@country_id").to_s
+      from_the_internets.xpath('//data/cities/city').each do |e|
+        alpha2  = e.xpath('@country_id').to_s
         City.new(
-          name_en: e.xpath("@title_en").to_s,
-          name_ru: e.xpath("@title_ru").to_s,
-          latitude:  e.xpath("@lat").to_s.to_f,
-          longitude: e.xpath("@lon").to_s.to_f,
+          name_en: e.xpath('@title_en').to_s,
+          name_ru: e.xpath('@title_ru').to_s,
+          latitude:  e.xpath('@lat').to_s.to_f,
+          longitude: e.xpath('@lon').to_s.to_f,
           country_alpha2: alpha2,
           country_name_en: country_name_by(alpha2)
         ).save
       end
     end
 
+    Tripster_Data_URL = 'http://tripster.ru/api/users/m4rr/basic/'
+    ISO_3166_Filename = 'public/iso-3166-countries-list.json'
+
     def from_the_internets
       Nokogiri::HTML(open(Tripster_Data_URL + '?' + rand(1000).to_s))
     end
 
-    def country_name_by(abbr)
+    def country_name_by abbr
       @countries_list = JSON.parse(File.read(ISO_3166_Filename)) if @countries_list.nil?
       @countries_list.select { |e| e['alpha-2'] == abbr }.first['name']
     end
