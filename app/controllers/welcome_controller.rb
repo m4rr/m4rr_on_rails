@@ -11,76 +11,63 @@ class WelcomeController < ApplicationController
   # http://web.archive.org/web/20100210204319/http://blog.hasmanythrough.com/2008/2/27/count-length-size
 
   def index
-    @map_json = visited_cities
+    @countries_count = City.group(:country_alpha2).count.count
+    @cities_count    = City.count
+    @ru_cities_count = City.where(country_alpha2: 'RU').count
+    @us_cities_count = City.where(country_alpha2: 'US').count
+
+    @map_json = markers_json
   end
 
   def sync # PATCH?
-    cities_refresh(true) # force refresh cities: download new data file      
-    build_markers_json
+    load_and_parse_tripster
+ 
     redirect_to action: "index"
   end
 
   private
 
+    Tripster_url           = 'http://tripster.ru/api/users/m4rr/basic/'
     Cities_json_filename   = 'public/cities.json'
     Tripster_xml_filename  = 'public/m4rr-tripster-data-basic.xml'
     ISO_3166_json_filename = 'public/iso-3166-countries-list.json'
 
-    def visited_cities
-      @countries_count = City.group(:country_alpha2).count.count
-      @cities_count    = City.count
-      @ru_cities_count = City.where(country_alpha2: 'RU').count
-      @us_cities_count = City.where(country_alpha2: 'US').count
+    # https://www.refactor.io/q/7ed1271f18
 
-      return File.read(Cities_json_filename) if File.exist? Cities_json_filename
-      return build_markers_json
+    def markers_json
+      cities = []
+
+      City.all.each do |city|
+        cities << { lat: city.latitude, lng: city.longitude, title: city.name_en }
+      end
+
+      cities.to_json
     end
 
-    def build_markers_json
-      cities_array = Array.new
-      cities = City.all
-      cities = cities_refresh if cities.nil? || cities.empty?
-      cities.each { |city|
-        cities_array << {
-          lat: city.latitude,
-          lng: city.longitude,
-          title: "#{city.name_en}",
-          # title_full: "#{city.country_name_en}: #{city.name_en}",
-        }
-      }
-      File.write(Cities_json_filename, cities_array.to_json)
-      cities_array.to_json
+    def load_and_parse_tripster
+      if doc = load_content_from_internet
+        City.delete_all
+
+        doc.xpath("//data/cities/city").each do |e|
+          alpha_2  = e.xpath("@country_id").to_s
+          City.new(
+            name_en:         e.xpath("@title_en").to_s,
+            name_ru:         e.xpath("@title_ru").to_s,
+            latitude:        e.xpath("@lat").to_s.to_f,
+            longitude:       e.xpath("@lon").to_s.to_f,
+            country_alpha2:  alpha_2,
+            country_name_en: country_name_by(alpha_2)
+          ).save
+        end
+      end
     end
 
-    def cities_refresh(force=false)
-      City.delete_all
-
-      xml_content = force ? load_content_from_internet : load_content_from_local_file
-      xml_content.xpath("//data/cities/city").each { |e|
-        id  = e.xpath("@country_id").to_s
-        ru  = e.xpath("@title_ru").to_s
-        en  = e.xpath("@title_en").to_s
-        lat = e.xpath("@lat").to_s.to_f
-        lng = e.xpath("@lon").to_s.to_f
-        country_name_en = country_name_by(id)
-        City.new(
-          :name_en    => en,
-          :name_ru    => ru,
-          :latitude   => lat,
-          :longitude  => lng,
-          :country_alpha2  => id,
-          :country_name_en => country_name_en
-        ).save
-      }
-      City.all
-    end
-
-    def load_content_from_local_file
-      Nokogiri::XML(File.read(Tripster_xml_filename))
-    end
+    # def load_content_from_local_file
+    #   Nokogiri::XML(File.read(Tripster_xml_filename))
+    # end
 
     def load_content_from_internet
-      Nokogiri::HTML(open('http://tripster.ru/api/users/m4rr/basic/?213'))
+      Nokogiri::HTML(open(Tripster_url + '?' + rand(1000).to_s))
     end
 
     def country_name_by(abbr)
