@@ -3,34 +3,33 @@ require 'nokogiri'
 
 class WelcomeController < ApplicationController
 
-  http_basic_authenticate_with name: 'm4rr', password: 'emfo', except: [:index]
+  http_basic_authenticate_with name: 'm4rr', password: 'ware', except: [:index]
 
   # todo:
-  # countries stat by COUNT OF GROUP BY country 
+  # countries stat by COUNT OF GROUP BY country
 
   # has_many
   # http://web.archive.org/web/20100210204319/http://blog.hasmanythrough.com/2008/2/27/count-length-size
 
   def index
     @cities_count    = City.count
-    @ru_cities_count = City.where(country_alpha2: 'RU').count
-    @us_cities_count = City.where(country_alpha2: 'US').count
+    @ru_cities_count = City.where( country_alpha2: 'RU').count
+    @us_cities_count = City.where( country_alpha2: 'US').count
     @countries_count = City.group(:country_alpha2).count.count
 
     @map_json = markers_json
   end
 
-  def sync # PATCH?
+  def sync # covered by http auth
     load_and_parse_tripster
- 
+
     redirect_to action: :index
   end
 
   private
 
-    Tripster_data_url      = 'http://tripster.ru/api/users/m4rr/basic/'
-    Tripster_xml_filename  = 'public/m4rr-tripster-data-basic.xml'
-    ISO_3166_json_filename = 'public/iso-3166-countries-list.json'
+    Tripster_Data_URL = 'http://tripster.ru/api/users/m4rr/basic/'
+    ISO_3166_Filename = 'public/iso-3166-countries-list.json'
 
     # https://www.refactor.io/q/7ed1271f18
 
@@ -61,11 +60,11 @@ class WelcomeController < ApplicationController
     end
 
     def from_the_internets
-      Nokogiri::HTML(open(Tripster_data_url + '?' + rand(1000).to_s))
+      Nokogiri::HTML(open(Tripster_Data_URL + '?' + rand(1000).to_s))
     end
 
     def country_name_by(abbr)
-      @countries_list = JSON.parse(File.read(ISO_3166_json_filename)) if @countries_list.nil?
+      @countries_list = JSON.parse(File.read(ISO_3166_Filename)) if @countries_list.nil?
       @countries_list.select { |e| e['alpha-2'] == abbr }.first['name']
     end
 
