@@ -14,10 +14,10 @@ class WelcomeController < ApplicationController
   # http://web.archive.org/web/20100210204319/http://blog.hasmanythrough.com/2008/2/27/count-length-size
 
   def index
-    @countries_count = City.group(:country_alpha2).count.count
     @cities_count    = City.count
     @ru_cities_count = City.where(country_alpha2: 'RU').count
     @us_cities_count = City.where(country_alpha2: 'US').count
+    @countries_count = City.group(:country_alpha2).count.count
 
     @map_json = markers_json
   end
@@ -30,8 +30,7 @@ class WelcomeController < ApplicationController
 
   private
 
-    Tripster_url           = 'http://tripster.ru/api/users/m4rr/basic/'
-    Cities_json_filename   = 'public/cities.json'
+    Tripster_data_url      = 'http://tripster.ru/api/users/m4rr/basic/'
     Tripster_xml_filename  = 'public/m4rr-tripster-data-basic.xml'
     ISO_3166_json_filename = 'public/iso-3166-countries-list.json'
 
@@ -50,27 +49,25 @@ class WelcomeController < ApplicationController
     def load_and_parse_tripster
       City.delete_all
 
-      load_content_from_internet.xpath("//data/cities/city").each do |e|
+      from_the_internets.xpath("//data/cities/city").each do |e|
         alpha2  = e.xpath("@country_id").to_s
         City.new(
           name_en: e.xpath("@title_en").to_s,
           name_ru: e.xpath("@title_ru").to_s,
           latitude:  e.xpath("@lat").to_s.to_f,
           longitude: e.xpath("@lon").to_s.to_f,
-          country_alpha2:  alpha2,
+          country_alpha2: alpha2,
           country_name_en: country_name_by(alpha2)
-          ).save
+        ).save
       end
     end
 
-    # def load_content_from_local_file
+    # def from_a_file
     #   Nokogiri::XML(File.read(Tripster_xml_filename))
     # end
 
-    def load_content_from_internet
-      if doc = open(Tripster_url + '?' + rand(1000).to_s)
-        Nokogiri::HTML(doc)
-      end
+    def from_the_internets
+      Nokogiri::HTML(open(Tripster_data_url + '?' + rand(1000).to_s))
     end
 
     def country_name_by(abbr)
