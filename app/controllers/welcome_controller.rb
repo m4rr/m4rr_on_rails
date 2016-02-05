@@ -5,10 +5,8 @@ class WelcomeController < ApplicationController
 
   http_basic_authenticate_with name: 'm4rr', password: 'emfo', except: [:index]
 
-# todo:
+  # todo:
   # countries stat by COUNT OF GROUP BY country 
-  # foursquare api
-  # check tripster w/o a file
 
   # has_many
   # http://web.archive.org/web/20100210204319/http://blog.hasmanythrough.com/2008/2/27/count-length-size
@@ -61,10 +59,6 @@ class WelcomeController < ApplicationController
         ).save
       end
     end
-
-    # def from_a_file
-    #   Nokogiri::XML(File.read(Tripster_xml_filename))
-    # end
 
     def from_the_internets
       Nokogiri::HTML(open(Tripster_data_url + '?' + rand(1000).to_s))
