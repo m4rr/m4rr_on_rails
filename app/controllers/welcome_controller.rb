@@ -3,6 +3,8 @@ require 'nokogiri'
 
 class WelcomeController < ApplicationController
 
+  http_basic_authenticate_with name: 'm4rr', password: 'emfo', except: [:index]
+
 # todo:
   # countries stat by COUNT OF GROUP BY country 
   # foursquare api
