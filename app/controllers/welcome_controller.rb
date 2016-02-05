@@ -3,24 +3,18 @@ require 'nokogiri'
 
 class WelcomeController < ApplicationController
 
-  http_basic_authenticate_with name: 'm4rr', password: 'ware', except: [:index]
-
-  # todo:
-  # countries stat by COUNT OF GROUP BY country
-
-  # has_many
-  # http://web.archive.org/web/20100210204319/http://blog.hasmanythrough.com/2008/2/27/count-length-size
+  http_basic_authenticate_with name: 'm4rr', password: 'ware', except: [:index] # only: [:sync]
 
   def index
+    @map_json = cities_json
+
     @cities_count    = City.count
     @ru_cities_count = City.where( country_alpha2: 'RU').count
     @us_cities_count = City.where( country_alpha2: 'US').count
     @countries_count = City.group(:country_alpha2).count.count
-
-    @map_json = cities_json
   end
 
-  def sync # covered by http auth
+  def sync # covered by http basic auth
     load_and_parse_tripster
 
     redirect_to action: :index
