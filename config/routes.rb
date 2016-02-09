@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get "mauth/sanmarco", to: "mauth#sanmarco"
   resources :betum, controller: :mauth, path: 'mauth', only: [:index, :create, :show] # , as: "mauth"
 
+  get '/relocated', to: 'relocated#hello'
 end
