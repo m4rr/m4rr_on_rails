@@ -194,7 +194,7 @@ a, a:visited {
   text-decoration: none;
 }
 
-a:hover {
+a:hover, a.hover {
   color: #ff2d55;
   text-decoration: underline;
 }
@@ -207,7 +207,7 @@ a.appstore {
   margin-left: -7px;
 }
 
-a.appstore:hover {
+a.appstore:hover, a.appstore.hover {
   border: 1px solid $link-half;
   /*border-color: #ff2d55;*/
   text-decoration: none;
