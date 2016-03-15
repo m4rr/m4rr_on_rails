@@ -13,16 +13,28 @@ og   image: asset_path('mauth@2x.png')
     <%= link_to 'https://blog.m4rr.ru/all/mauth/' do %>
       <%= image_tag 'mauth@2x.png', size: '60', class: 'h1img', alt: 'mauth beta' %>
     <% end %>
+    <h1>Москва. Метро. Авторизация Wi-Fi</h1>
+    <p>
+      Хватит смотреть рекламу в метро!<br />
+      Авторизуйся в метро за 1 клик<br />
+      и пользуйся интернетом свободно!
+    </p>
 
     <%= link_to 'https://itunes.apple.com/ru/app/moscow-metro-wi-fi-authorization/id1041801794?l=en&mt=8', class: 'app-store-link' do %>
-      <%= image_tag 'Download_on_the_App_Store@2x.png', size: '203x60', alt: 'mauth on the App Store' %>
+      <%= image_tag 'Download_on_the_App_Store_ru@2x.png', width: '180', alt: 'mauth on the App Store' %>
     <% end %>
+
+    <p class="social">
+      <a href="http://twitter.com/m4rr">Твитер</a>
+      &nbsp;•&nbsp;
+      <a href="https://github.com/m4rr/mauth">Гитхаб</a>
+    </p>
 
     <%= render "likely" %>
   </div>
 </div>
 
 <div class="disclaimer">
-  <p>Используя это приложение, вы принимаете на себя всю ответственность за взаимодействие с сервисом интернета в метро. Это приложение с <a href="https://github.com/m4rr/mauth">открытым исходным кодом</a>.</p>
+  <p>Используя приложение, вы принимаете на себя ответственность за взаимодействие с сервисом интернета в метро.<br />Приложение с <a href="https://github.com/m4rr/mauth">открытым исходным кодом</a>.</p>
   <p>Using this app, you are taking full responsibility for interaction with the internet service in the subway. This app is <a href="https://github.com/m4rr/mauth">open source</a>.</p>
 </div>
