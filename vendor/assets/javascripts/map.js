@@ -1,23 +1,22 @@
-// https://snazzymaps.com/style/5263/lighter-monochrome-fork
-
-function buildMap(markers){
-    $(function(){
+function buildMap(markers) {
+    $(function() {
         markers = transformMarkers(markers);
         var
+            // https://snazzymaps.com/style/5263/lighter-monochrome-fork
             mapStyleMyFork = [{"featureType":"administrative.country","elementType":"geometry.stroke","stylers":[{"lightness":"76"}]},{"featureType":"administrative.country","elementType":"labels.text","stylers":[{"lightness":"30"}]},{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ffffff"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#e0ebfa"}]}],
             map = $('#map').gmap3({
                 map: {
                     options: {
-                        zoom: 4,
                         center: new google.maps.LatLng(56.9475, 24.106944), // riga
                         // center: new google.maps.LatLng(52.31, 13.22), // berlin
                         // center: new google.maps.LatLng(43.541050, -40.602783), // atl ocean
                         // center: new google.maps.LatLng(51.51, 0), // london
-                        styles: mapStyleMyFork,
                         disableDefaultUI: true,
                         mapTypeControl: false,
                         scaleControl: false,
                         streetViewControl: false,
+                        styles: mapStyleMyFork,
+                        zoom: 4,
                         zoomControl: true,
                         zoomControlOptions: {
                             style: google.maps.ZoomControlStyle.LARGE,
@@ -29,21 +28,20 @@ function buildMap(markers){
                     values: markers,
                     events: {
                         mouseover: showTooltip,
-                        mouseout: function(){
+                        mouseout: function() {
                             $(this).gmap3({clear: {tag: 'tooltip'}});
                         },
                         click: showTooltip
                     },
-                    cluster:{
+                    cluster: {
                         radius: 30,
-                        events: { 
-                            mouseover: function(cluster, e, context){
-                                var
-                                    titles = $.map(context.data.markers, function(marker){
-                                        return marker.data.title;     
-                                    }).sort();
+                        events: {
+                            mouseover: function(cluster, e, context) {
+                                var titles = $.map(context.data.markers, function(marker) {
+                                    return marker.data.title;
+                                }).sort();
                                 $(this).gmap3(
-                                    {clear: {tag: 'tooltip2'}},
+                                    { clear: {tag: 'tooltip2'} },
                                     {
                                         overlay: {
                                             tag: 'tooltip2',
@@ -57,17 +55,16 @@ function buildMap(markers){
                                             }
                                         }
                                     });
-                                setTimeout(function(){
-                                    $('#tooltip2').addClass('show');    
+                                setTimeout(function() {
+                                    $('#tooltip2').addClass('show');
                                 }, 100);
                             },
-                            mouseout: function(cluster){
+                            mouseout: function(cluster) {
                                 $(this).gmap3({clear: {tag: 'tooltip2'}});
                             },
-                            click: function(cluster, event, context){
+                            click: function(cluster, event, context) {
                                 $(this).gmap3({clear: {tag: 'tooltip2'}});
-                                var
-                                    $map = $(this).gmap3('get');
+                                var $map = $(this).gmap3('get');
                                 $map.panTo(context.data.latLng);
                                 $map.setZoom($map.getZoom() + 2);
                             }
@@ -82,37 +79,36 @@ function buildMap(markers){
                             width: 35,
                             height: 35
                         },
-                        10: {
+                        9: {
                             content: "<div class='cluster cluster3'>CLUSTER_COUNT</div>",
                             width: 40,
                             height: 40
                         }
                     }
                 }
-            }); 
-            
-        function transformMarkers(markers)
-        {
-            return $.map(markers, function(marker, i)
-            {
+            });
+
+        function transformMarkers(markers) {
+            return $.map(markers, function(marker, i) {
+                var markerSide = 25;
                 return {
-                    latLng: [marker.lat, marker.lng], 
+                    latLng: [marker.lat, marker.lng],
                     data: {
                         title: marker.title,
                         infowindow: marker.infowindow
                     },
                     options: {
                         icon: new google.maps.MarkerImage('images/map/marker_one.svg',
-                            new google.maps.Size(  20, 20), // icon size
-                            new google.maps.Point(  0,  0), // origin
-                            new google.maps.Point( 10, 10)  // anchor
+                              new google.maps.Size(markerSide, markerSide), // icon size
+                              new google.maps.Point(0, 0), // origin
+                              new google.maps.Point(markerSide / 2, markerSide / 2)  // anchor
                         )
                     }
-                }   
+                }
             });
         }
-        
-        function showTooltip(marker, e, context){
+
+        function showTooltip(marker, e, context) {
             $(this).gmap3(
                 {clear: {tag: 'tooltip'}},
                 {
@@ -128,15 +124,13 @@ function buildMap(markers){
                         }
                     }
                 });
-            setTimeout(function(){
-                $('#tooltip').addClass('show');    
+            setTimeout(function() {
+                $('#tooltip').addClass('show');
             }, 100);
-            
         }
-        
-        $('.map_link').click(function(){
+
+        $('.map_link').click(function() {
             map.setZoom(map.getZoom() === 4 ? 0 : 4);
         });
-        
     });
 }
