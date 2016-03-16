@@ -135,6 +135,11 @@ p.app strong, p.app strong a {
   color: gold;
 }
 
+.stars .not-gold {
+  color: white;
+  -webkit-text-stroke: 1px #eee;
+}
+
 .eof { /* social icon-links */
   /*margin: 25px 15px;*/
   font-size: 16px;
