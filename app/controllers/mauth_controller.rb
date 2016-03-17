@@ -9,7 +9,7 @@ class MauthController < ApplicationController
       @alle = Betum.all
       if params[:csv] == 'csv'
         csv_string = CSV.generate do |csv|
-          @alle.each { |e| 
+          @alle.each { |e|
             csv << [e.first_name, e.last_name, e.email]
           }
         end
