@@ -20,6 +20,10 @@ class MauthController < ApplicationController
     end
   end
 
+  def privacy_policy
+    render 'privacy-policy'
+  end
+
   # GET /beta
   # GET /beta.json
   def index
