@@ -140,6 +140,10 @@ p.app strong, p.app strong a {
   -webkit-text-stroke: 1px #eee;
 }
 
+span.nbsp {
+  white-space: nowrap;
+}
+
 .eof { /* social icon-links */
   /*margin: 25px 15px;*/
   font-size: 16px;
