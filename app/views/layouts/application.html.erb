@@ -7,12 +7,16 @@
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="Карта моих путешествий. Кто больше? :-)">
-  <!-- <meta property="og:image" content="http://www.m4rr.ru/tripster-images/touch-icon.png" /> -->
-  <!-- <link rel="image_src" href="http://www.m4rr.ru/tripster-images/touch-icon.png" /> -->
+
+  <meta property="og:title" content=""/>
+  <meta property="og:description" content=""/>
+  <meta property="og:image" content="<%= image_path 'm4rr.ru-og-image.png' %>" />
+  <meta property="og:type" content="website"/>
+  <meta name="format-detection" content="telephone=no"/>
 
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  <link rel="apple-touch-icon" href="images/touch-icon@2x.png" />
+  <link rel="apple-touch-icon" href="<%= image_path 'touch-icon@2x.png' %>" />
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true  %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
