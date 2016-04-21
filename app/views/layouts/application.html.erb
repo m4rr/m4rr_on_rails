@@ -1,22 +1,29 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Marat Saytakov</title>
+  <%
+    meta title: "Marat Saytakov — Software Engineer",
+         description: "iOS Software Engineer, Code Mentor, Swift Contributor. And Traveller.",
+         keywords: %w(Марат Сайтаков ios developer swift objective-c resume cv moscow metro wifi москва метро авторизация вайфай chars unicode keyboard клавиатура символы айфон юникод percent calculator калькулятор проценты)
+
+    og title: "",
+       description: "",
+       image: "https://m4rr.ru/images/m4rr.ru-og-image.png",
+       type: "website"
+
+    twitter card: "summary"
+  %>
+
+  <%= metamagic %>
 
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="Карта моих путешествий. Кто больше? :-)">
 
-  <meta property="og:title" content=""/>
-  <meta property="og:description" content=""/>
-  <meta property="og:image" content="https://m4rr.ru<%= image_path 'm4rr.ru-og-image.png' %>" />
-  <meta property="og:type" content="website"/>
   <meta name="format-detection" content="telephone=no"/>
-
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  <link rel="apple-touch-icon" href="https://m4rr.ru<%= image_path 'touch-icon@2x.png' %>" />
+  <link rel="apple-touch-icon" href="https://m4rr.ru/images/touch-icon@2x.png" />
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true  %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
