@@ -132,6 +132,11 @@ p.app strong, p.app strong a {
 
 .stars {
   color: gold;
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  position: relative;
+  top: -1px;
 }
 
 .stars .not-gold {
