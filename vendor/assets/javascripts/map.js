@@ -90,20 +90,25 @@ function buildMap(markers) {
 
         function transformMarkers(markers) {
             return $.map(markers, function(marker, i) {
-                var markerSide = 25;
+                var markerSide = 10.0;
+                var circlePin = {
+                    path:  'M-10,0a10,10 0 1,0 20,0a10,10 0 1,0 -20,0\
+                            M-2,0a2,2 0 1,0 4,0a2,2 0 1,0 -4,0',
+                    strokeColor: '#4990E2',
+                    fillColor: '#4990E2',
+                    fillOpacity: 0.3,
+                    size: new google.maps.Size(markerSide, markerSide),
+                    anchor: new google.maps.Point(0, 0),
+                    origin: new google.maps.Size(markerSide / 2, markerSide / 2)
+                };
+
                 return {
-                    latLng: [marker.lat, marker.lng],
+                    latLng: [ marker.lat, marker.lng ],
                     data: {
                         title: marker.title,
                         infowindow: marker.infowindow
                     },
-                    options: {
-                        icon: new google.maps.MarkerImage('images/map/marker_one.svg',
-                              new google.maps.Size(markerSide, markerSide), // icon size
-                              new google.maps.Point(0, 0), // origin
-                              new google.maps.Point(markerSide / 2, markerSide / 2)  // anchor
-                        )
-                    }
+                    options: { icon: circlePin }
                 }
             });
         }
