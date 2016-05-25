@@ -5,5 +5,4 @@
 //= require map
 //= require_tree .
 
-//= stub ./relocated/
-// stub 'mauth'
+// stub mauth
