@@ -109,13 +109,13 @@ end
 
   private
 
-  def set_betum
-    @betum = Betum.find(params[:id])
-  end
+    def set_betum
+      @betum = Betum.find(params[:id])
+    end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def betum_params
-    params.require(:betum).permit(:first_name, :last_name, :email, :desc, :how_did_you_know)
-  end
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def betum_params
+      params.require(:betum).permit(:first_name, :last_name, :email, :desc, :how_did_you_know)
+    end
 
 end

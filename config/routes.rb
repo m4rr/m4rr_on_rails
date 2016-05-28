@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get '/cv', to: redirect('/marat-saytakov-cv.pdf')
   get "@sync", to: "welcome#sync"
 
-  resources :betum, controller: :mauth, path: 'mauth', only: [:index, :create, :show] # , as: "mauth"
+  # resources :betum, controller: :mauth, path: 'mauth', only: [:index, :create, :show] # , as: "mauth"
+  get 'mauth', to: 'mauth#index'
   get "mauth/sanmarco", to: "mauth#sanmarco"
   get "mauth/privacy-policy", to: "mauth#privacy_policy"
 end
