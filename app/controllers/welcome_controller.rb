@@ -3,7 +3,7 @@ require 'nokogiri'
 
 class WelcomeController < ApplicationController
 
-  http_basic_authenticate_with name: 'm4rr', password: 'ware', except: [:index] # only: [:sync]
+  http_basic_authenticate_with name: 'm4rr', password: ENV["SyncPass"], except: [:index] # only: [:sync]
 
   def index
     @map_json = cities_json
