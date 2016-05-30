@@ -178,31 +178,6 @@ i.icon-paper-plane {
 }
 */
 
-.likely-wrapper {
-  display: block;
-  padding: 5px 0;
-  position: absolute;
-
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  text-align: center;
-  width: 100%;
-
-background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%);
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(40%,rgba(255,255,255,1)));
-background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 40%);
-background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 40%);
-background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 40%);
-background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 40%);
-// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
-
-  div {
-    margin: 0 3px 6px 3px !important;
-  }
-}
-
 
 
 a, a:visited {
@@ -236,11 +211,6 @@ a.appstore:hover {
   background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
 }
 
-.gm-style-iw {
-  overflow: visible !important;
-  white-space: nowrap;
-}
-
 @media (max-width: 500px) {
   .container {
     -webkit-flex: none;
@@ -265,10 +235,6 @@ a.appstore:hover {
   }
   p {
     margin: $mobile-margin;
-  }
-  .likely-wrapper {
-    display: none;
-    position: relative;
   }
 }
 
@@ -366,10 +332,6 @@ a.appstore:hover {
 
 /*iPhone 6 and iPhone 6+ portrait and landscape*/
 @media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px){
-  .likely-wrapper {
-    display: none;
-    position: relative;
-  }
 }
 
 /*iPhone 6 and iPhone 6+ portrait*/
