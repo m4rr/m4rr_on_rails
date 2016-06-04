@@ -1,14 +1,12 @@
+CV_PDF_URI ||= '/marat-saytakov-cv.pdf'
+
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  # Error 451
-  get '/451', to: redirect('/404', status: 451)
-
   # CV
-  @cv_pdf_url ||= '/marat-saytakov-cv.pdf'
-  get '/marat-saytakov-resume.pdf', to: redirect(@cv_pdf_url)
-  get '/cv.pdf', to: redirect(@cv_pdf_url)
-  get '/cv', to: redirect(@cv_pdf_url)
+  get '/marat-saytakov-resume.pdf', to: redirect(CV_PDF_URI)
+  get '/cv.pdf', to: redirect(CV_PDF_URI)
+  get '/cv', to: redirect(CV_PDF_URI)
 
   # Auth-based sync map data with Tripster
   get '@sync', to: 'welcome#sync'
