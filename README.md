@@ -2,6 +2,10 @@
 
 A source code of [m4rr.ru](https://m4rr.ru).
 
+# Known Issues
+
+* A `https://m4rr.ru/404` returns `200 OK` despite it is a 404 actually.
+
 ## :gift_heart: Contributing
 
 Please create an issue with a description of your problem or open a pull request with a fix according to .
