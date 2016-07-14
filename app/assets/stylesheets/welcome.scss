@@ -291,11 +291,18 @@ a.appstore:hover {
 
 
 // map
-.cluster{ position:relative; z-index:10; font:bold 14px/30px 'Helvetica', sans-serif; color:#fff; background:url(/images/map/marker_cluster.svg) no-repeat 50%; background-size:cover; text-align:center; }
+.cluster{
+  font: bold 14px/30px $font-stack;
+  position: relative; z-index: 10; color:#fff; background: url(/images/map/marker_cluster.svg) no-repeat 50%; background-size: cover; text-align: center;
+}
 .cluster1{ width:30px; height:30px; }
 .cluster2{ width:35px; height:35px; font-size:15px; line-height:35px; }
 .cluster3{ width:40px; height:40px; font-size:16px; line-height:40px; }
-.tooltip{ position:relative; z-index:1; width:160px; font:13px 'Helvetica', sans-serif; color:#333; text-align:center; opacity:0; transform:translate(0, -20px); transition:.3s; }
+
+.tooltip{
+  font: 13px $font-stack;
+  position: relative; z-index: 1; width: 160px; color: #333; text-align: center; opacity: 0; transform: translate(0, -20px); transition: .3s;
+}
 .tooltip.show{ transform:translate(0, 0); opacity:1; }
 .tooltip div{ position:absolute; left:0; right:0; bottom:0; }
 .tooltip span{ position:relative; display:inline-block; padding:5px 10px; border-radius:4px; background:rgba(255,255,255,1.0); box-shadow:0 0 3px rgba(0,0,0,.3); }
