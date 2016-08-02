@@ -84,14 +84,6 @@ h2 {
   margin: $default-margin;
 }
 
-h3 {
-  font-size: 12px;
-  font-weight: bold;
-  margin: $default-margin;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-}
-
 space {
   display: block;
   margin: 40px;
@@ -127,7 +119,7 @@ p.app {
       text-decoration: none;
     }
 
-    a.hover { /* birman hover */
+    a.hover { /* birman hover, used via js */
       color: $link-hover;
       opacity: 1;
       text-decoration: underline;
@@ -167,10 +159,10 @@ ul {
   position: relative;
   top: -1px;
 
-  .not-gold {
-    color: white;
-    -webkit-text-stroke: 1px #eee;
-  }
+  // .not-gold { /* a.k.a. silver */
+  //   color: white;
+  //   -webkit-text-stroke: 1px #eee;
+  // }
 }
 
 span.nbsp {
@@ -182,7 +174,7 @@ span.now {
   border: 1px solid red;
   border-radius: 5px;
   padding: 0;
-  margin: 0 0 0 5px;
+  margin: 0 0 0 9px;
   padding: 2px 2px 2px 5px;
   height: 20px;
 

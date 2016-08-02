@@ -83,21 +83,21 @@
         // intercept font download
         if (newElement.href
           && newElement.href.indexOf('https://fonts.googleapis.com/css?family=Roboto') === 0) {
-          return;
-      }
+            return;
+        }
         // intercept style elements for IEs
         if (newElement.tagName.toLowerCase() === 'style'
           && newElement.styleSheet
           && newElement.styleSheet.cssText
           && newElement.styleSheet.cssText.replace('\r\n', '').indexOf('.gm-style') === 0) {
-          return;
-      }
+            return;
+        }
         // intercept style elements for other browsers
         if (newElement.tagName.toLowerCase() === 'style'
           && newElement.innerHTML
           && newElement.innerHTML.replace('\r\n', '').indexOf('.gm-style') === 0) {
-          return;
-      }
+            return;
+        }
       insertBefore.call(head, newElement, referenceElement);
     };
 
