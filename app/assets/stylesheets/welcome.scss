@@ -9,7 +9,7 @@ $font-stack: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue
 // $bg-color: #fdfdfd; // #159588;
 $fg-color: #666;
 $dimmed-color: #999;
-$default-margin: 15px 30px 5px 30px;
+$default-margin: 20px 30px 15px 30px;
 $mobile-margin: 15px 20px;
 $link: #4D92E0; // blue
 $link-hover: #ff2d55; // red
@@ -92,8 +92,18 @@ h3 {
   text-transform: uppercase;
 }
 
+space {
+  display: block;
+  padding: 9px 0;
+}
+
 strong, b {
-  font-weight: 500;
+  font-weight: bold;
+}
+
+strong {
+  color: $fg-color;
+  font-weight: bold;
 }
 
 p {
@@ -106,12 +116,10 @@ p.app {
   margin-bottom: 10px;
 
   strong {
-    color: $fg-color;
-    opacity: 0.85;
+
 
     a {
       color: inherit;
-      opacity: inherit;
     }
 
     a:hover {
@@ -134,11 +142,11 @@ strong {
 ul {
   margin: $default-margin;
   margin-top: 0;
-  margin-bottom: 0;
+  // margin-bottom: 0;
 
   li {
     margin-left: 20px;
-    padding: 0 0 5px 0;
+    padding: 5px 0 0 0;
     list-style-type: none;
     color: $dimmed-color;
   }
