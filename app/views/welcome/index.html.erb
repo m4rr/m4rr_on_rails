@@ -1,10 +1,9 @@
 <div class="container">
-  <div id="map" class="map fade-in two"></div>
   <nav class="fade-in one">
-    <h1>Marat Saytakov</h1>
+    <h1 class="26yo">Marat Saytakov</h1>
     <h2>iOS software engineer, code mentor, Swift contributor. And traveller.</h2>
 
-    <p class="to-center"><strong><a href="https://blog.m4rr.ru/">Blog</a></strong> &nbsp; • &nbsp; <strong><a href="/marat-saytakov-cv.pdf">Résumé / CV</a></strong></p>
+    <p><strong><a href="/marat-saytakov-cv.pdf">Resume / CV</a></strong> &nbsp; • &nbsp; <a href="https://blog.m4rr.ru/"><strong>Blog</strong> in Russian</a> &nbsp; • &nbsp; <a href="https://medium.com/@m4rr"><strong>Medium</strong> in English</a></p>
 
     <div class="eof">
       <a href="https://github.com/m4rr"><i class="icon-github"></i></a><a href="https://stackoverflow.com/users/1204935/marat-saytakov"><i class="icon-stackoverflow"></i></a><a href="https://twitter.com/m4rr"><i class="icon-twitter"></i></a><a href="https://vk.com/narisoval"><i class="icon-vkontakte"></i></a><a href="https://facebook.com/narisoval"><i class="icon-facebook-squared"></i></a><a href="https://instagram.com/m4rr"><i class="icon-instagram"></i></a><a href="https://linkedin.com/in/maratsaytakov"><i class="icon-linkedin"></i></a>
@@ -13,49 +12,62 @@
     <!-- <h3>★ Wantr</h3> -->
     <!-- <p class="to-center"><a href="http://wantr.ru/m4rr">Wish List</a></p> -->
 
-    <h3 class="map_link"><i class="icon-flight"></i> Travel</h3>
-    <p>Visited <%= raw @countries_count %> countries and <%= raw @cities_count %> cities, including <%= raw @ru_cities_count %> cities in Russia and <%= raw @us_cities_count %> in <b>USA</b><!--, 34 cities and 12 countries in Europe-->.</p>
+    <!-- <h3><i class="icon-apple"></i> Given Talks</h3> -->
+
+    <h3><i class="icon-flight"></i> Public Activity</h3>
+    <p><strong>Visited</strong> <%= raw @countries_count %> countries and <%= raw @cities_count %> cities, including <%= raw @ru_cities_count %> cities in Russia and <%= raw @us_cities_count %> in <b>USA</b><!-- , 34 cities and 12 countries in Europe -->.</p>
+
+    <p>
+      <strong>Given talks:</strong>
+      <ul>
+        <li><a href="http://moscoding.ru/swift/">iOS Dev. on Swift</a>, Moscow Coding School<span class="now">now</span></li>
+        <li><a href="https://blog.m4rr.ru/all/size-classes-addition/">Size Classes on iOS</a>, CocoaHeads Moscow</li>
+        <li><a href="https://habrahabr.ru/company/mailru/blog/244673/">Custom Keyboards</a></li>
+      </ul>
+    </p>
+
 
     <h3><i class="icon-apple"></i> Apps</h3>
     <p class="app">
-      <strong><a href="https://itunes.apple.com/ru/app/moscow-metro-wi-fi-authorization/id1041801794?l=ru&mt=8">Moscow Metro Wi-Fi Auth</a></strong>&nbsp;&nbsp;<span class="stars to-right">★★★★★</span><br /><!-- <span class="not-gold">★</span> -->
+      <strong><a href="https://itunes.apple.com/ru/app/moscow-metro-wi-fi-authorization/id1041801794?l=ru&mt=8">Moscow Metro Wi-Fi Auth</a></strong>&nbsp;&nbsp;<span class="stars">★★★★★</span><br /><!-- <span class="not-gold">★</span> -->
       Helps avoid ads in MosMetro_Free, for free.<br />
       <a class="appstore" href="https://itunes.apple.com/ru/app/moscow-metro-wi-fi-authorization/id1041801794?l=ru&mt=8">App Store</a>
-      &nbsp; &middot; &nbsp;
-      <a href="/mauth" class="to-right">Promo</a>
+      &middot; &nbsp;
+      <a href="/mauth">Promo</a>
       &nbsp; &middot; &nbsp;
       <a href="https://github.com/m4rr/mauth">GitHub</a>
       &nbsp; &middot; &nbsp;
       <a href="https://blog.m4rr.ru/all/moscow-metro-wi-fi-authorization/">More</a>
     </p>
     <p class="app">
-      <strong class="to-left"><a href="https://itunes.apple.com/us/app/chars/id918947313?mt=8">Chars</a></strong>&nbsp;&nbsp;<span class="stars to-right">★★★★★</span><br />
+      <strong><a href="https://itunes.apple.com/us/app/chars/id918947313?mt=8">Chars</a></strong>&nbsp;&nbsp;<span class="stars">★★★★★</span><br />
       Beautiful and native way to type every&#173;thing with Unicode characters on iOS.<br />
       <a class="appstore" href="https://itunes.apple.com/us/app/chars/id918947313?mt=8">App Store</a>
-      &nbsp; &middot; &nbsp;
-      <a href="http://www.chars.cc/" class="to-right">chars.cc</a>
+      &middot; &nbsp;
+      <a href="http://www.chars.cc/">chars.cc</a>
     </p>
     <p class="app">
-      <strong><a href="https://itunes.apple.com/us/app/easy-percent-much-easier-calc/id740111096?mt=8">Easy Percent</a></strong>&nbsp;&nbsp;<span class="stars to-right">★★★★★</span><br />
+      <strong><a href="https://itunes.apple.com/us/app/easy-percent-much-easier-calc/id740111096?mt=8">Easy Percent</a></strong>&nbsp;&nbsp;<span class="stars">★★★★★</span><br />
       An easier and prettier calculator for percentages.<br />
       <a class="appstore" href="https://itunes.apple.com/us/app/easy-percent-much-easier-calc/id740111096?mt=8">App Store</a>
     </p>
     <p class="app">
       <a href="https://telegram.me/addstickers/DUMP2016"><%= image_tag 'huyak-production@2x.png', size: '60', align: 'right', alt: 'Стикеры для телеграма: хуяк-хуяк и в продакшен / Slap shit together and deploy', title: 'Хуяк-хуяк и в продакшен / Slap shit together and deploy' %></a>
       <strong><a href="https://telegram.me/addstickers/DUMP2016">Geek Sticker Set</a></strong>  <span class="nbsp">for <i class="icon-paper-plane"></i> Telegram</span><br />
-      Well-illustrated techie memes stickers. 6k+ happy users.<br />
+      Well-illustrated techie memes stickers.<br />6k+ happy users.<br />
       <a class="appstore" href="https://telegram.me/addstickers/DUMP2016">Add Stickers</a>
-      &nbsp; &middot; &nbsp;
+      &middot; &nbsp;
       <a href="https://blog.m4rr.ru/all/telegram-stickers-ctrl-c-writer/">More</a>
     </p>
     <p class="app">
       <strong><a href="https://telegram.me/USDRUB_bot">EUR-USD-RUB Bot</a></strong>  <span class="nbsp">for <i class="icon-paper-plane"></i> Telegram</span><br />
       Pretty straightforward currency converter bot. Useful helper on a Philosophers' ships chats.<br />
       <a class="appstore" href="https://telegram.me/USDRUB_bot">Open Bot</a>
-      &nbsp; &middot; &nbsp;
+      &middot; &nbsp;
       <a href="https://github.com/m4rr/money_bot">GitHub</a>
     </p>
   </nav>
+  <div id="map" class="map fade-in two"></div>
 </div>
 
 <script type="text/javascript">
