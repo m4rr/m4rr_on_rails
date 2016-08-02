@@ -94,7 +94,7 @@ h3 {
 
 space {
   display: block;
-  padding: 9px 0;
+  margin: 40px;
 }
 
 strong, b {
@@ -202,6 +202,7 @@ i.icon-paper-plane {
 .eof { /* social icon-links */
   font-size: 18px;
   margin: $default-margin;
+  margin-bottom: 5px;
   word-spacing: 0;
 
   a, a:visited {
