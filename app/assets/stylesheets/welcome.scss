@@ -156,11 +156,6 @@ ul {
   letter-spacing: 0.2em;
   position: relative;
   top: -1px;
-
-  // .not-gold { /* a.k.a. silver */
-  //   color: white;
-  //   -webkit-text-stroke: 1px #eee;
-  // }
 }
 
 .nbsp {
@@ -194,7 +189,7 @@ i.icon-paper-plane {
   word-spacing: 0;
 
   a {
-    color: #bbb;
+    color: $dimmed-color;
     padding: 5px 11px 5px 0;
   }
 }
@@ -312,7 +307,7 @@ a {
 
 .cluster {
   font: bold 14px/30px $font-stack;
-  position: relative; z-index: 10; color:#fff; background: image-url('marker_cluster.svg') no-repeat 50%; background-size: cover; text-align: center;
+  position: relative; z-index: 10; color: white; background: image-url('marker_cluster.svg') no-repeat 50%; background-size: cover; text-align: center;
 }
 
 .cluster1 { width:30px; height:30px; }
@@ -321,7 +316,7 @@ a {
 
 .tooltip {
   font: 13px $font-stack;
-  position: relative; z-index: 1; width: 160px; color: #333; text-align: center; opacity: 0; transform: translate(0, -20px); transition: .3s;
+  position: relative; z-index: 1; width: 160px; color: $color; text-align: center; opacity: 0; transform: translate(0, -20px); transition: .3s;
 }
 
 .tooltip.show { transform:translate(0, 0); opacity:1; }
