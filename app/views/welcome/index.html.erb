@@ -2,9 +2,13 @@
   <nav class="fade-in one">
     <h1 class="26yo">Marat Saytakov</h1>
 
-    <h2>iOS software engineer, code mentor, Swift contributor. And traveller.</h2>
+    <h2>iOS software engineer, <span class="nbsp">code mentor</span>, <span class="nbsp">Swift contributor.</span> <span class="nbsp">And traveller.</span></h2>
 
-    <p><b><a href="/marat-saytakov-cv.pdf">Resume / CV</a></b> &nbsp; • &nbsp; <a href="https://blog.m4rr.ru/"><b>Blog</b> in Russian</a> &nbsp; • &nbsp; <a href="https://medium.com/@m4rr" class="nbsp"><b>Medium</b> in English</a></p>
+    <p>
+      <b><a href="/marat-saytakov-cv.pdf">Resume / CV</a></b> &nbsp; •
+      &nbsp; <a href="https://blog.m4rr.ru/" class="nbsp"><b>Blog</b> in Russian</a> &nbsp; •
+      &nbsp; <a href="https://medium.com/@m4rr" class="nbsp"><b>Medium</b> in English</a>
+    </p>
 
     <div class="eof">
       <a href="https://github.com/m4rr"><i class="icon-github"></i></a><a href="https://stackoverflow.com/users/1204935/marat-saytakov"><i class="icon-stackoverflow"></i></a><a href="https://twitter.com/m4rr"><i class="icon-twitter"></i></a><a href="https://vk.com/narisoval"><i class="icon-vkontakte"></i></a><a href="https://facebook.com/narisoval"><i class="icon-facebook-squared"></i></a><a href="https://instagram.com/m4rr"><i class="icon-instagram"></i></a><a href="https://linkedin.com/in/maratsaytakov"><i class="icon-linkedin"></i></a>
@@ -30,7 +34,7 @@
     <space></space>
 
     <p class="app">
-      <strong><a href="https://itunes.apple.com/ru/app/moscow-metro-wi-fi-authorization/id1041801794?l=ru&mt=8">Moscow Metro Wi-Fi Auth</a></strong>&nbsp;&nbsp;<span class="stars">★★★★★</span><br /><!-- <span class="not-gold">★</span> -->
+      <strong><a href="https://itunes.apple.com/ru/app/moscow-metro-wi-fi-authorization/id1041801794?l=ru&mt=8">Moscow Metro Wi-Fi Auth</a></strong>&nbsp;&nbsp;<span class="stars">★★★★★</span><br />
       Helps avoid ads in MosMetro_Free, for free.<br />
       <a class="appstore" href="https://itunes.apple.com/ru/app/moscow-metro-wi-fi-authorization/id1041801794?l=ru&mt=8">App Store</a>
       &middot; &nbsp;
@@ -54,14 +58,14 @@
     </p>
     <p class="app">
       <a href="https://telegram.me/addstickers/DUMP2016"><%= image_tag 'huyak-production@2x.png', size: '60', align: 'right', alt: 'Стикеры для телеграма: хуяк-хуяк и в продакшен / Slap shit together and deploy', title: 'Хуяк-хуяк и в продакшен / Slap shit together and deploy' %></a>
-      <strong><a href="https://telegram.me/addstickers/DUMP2016">Geek Sticker Set</a></strong>  <span class="nbsp">for <i class="icon-paper-plane"></i> Telegram</span><br />
-      Well-illustrated techie memes stickers.<br />6k+ happy users.<br />
+      <strong><a href="https://telegram.me/addstickers/DUMP2016">Geek Sticker Set</a></strong>&nbsp; <span class="nbsp">for <i class="icon-paper-plane"></i> Telegram</span><br />
+      Well-illustrated techie memes stickers. <span class="nbsp">6k+ happy users.</span><br />
       <a class="appstore" href="https://telegram.me/addstickers/DUMP2016">Add Stickers</a>
       &middot; &nbsp;
       <a href="https://blog.m4rr.ru/all/telegram-stickers-ctrl-c-writer/">More</a>
     </p>
     <p class="app">
-      <strong><a href="https://telegram.me/USDRUB_bot">EUR-USD-RUB Bot</a></strong>  <span class="nbsp">for <i class="icon-paper-plane"></i> Telegram</span><br />
+      <strong><a href="https://telegram.me/USDRUB_bot">EUR-USD-RUB Bot</a></strong>&nbsp; <span class="nbsp">for <i class="icon-paper-plane"></i> Telegram</span><br />
       Pretty straightforward currency converter bot. Useful helper on a Philosophers' ships chats.<br />
       <a class="appstore" href="https://telegram.me/USDRUB_bot">Send Message</a>
       &middot; &nbsp;
@@ -81,24 +85,13 @@
     var head = $('head')[0];
     var insertBefore = head.insertBefore;
     head.insertBefore = function (newElement, referenceElement) {
-        // intercept font download
-        if (newElement.href
-          && newElement.href.indexOf('https://fonts.googleapis.com/css?family=Roboto') === 0) {
-            return;
-        }
-        // intercept style elements for IEs
-        if (newElement.tagName.toLowerCase() === 'style'
-          && newElement.styleSheet
-          && newElement.styleSheet.cssText
-          && newElement.styleSheet.cssText.replace('\r\n', '').indexOf('.gm-style') === 0) {
-            return;
-        }
-        // intercept style elements for other browsers
-        if (newElement.tagName.toLowerCase() === 'style'
-          && newElement.innerHTML
-          && newElement.innerHTML.replace('\r\n', '').indexOf('.gm-style') === 0) {
-            return;
-        }
+      // intercept font download
+      if (newElement.href && newElement.href.indexOf('https://fonts.googleapis.com/css?family=Roboto') === 0) { return; }
+      // intercept style elements for IEs
+      if (newElement.tagName.toLowerCase() === 'style' && newElement.styleSheet && newElement.styleSheet.cssText && newElement.styleSheet.cssText.replace('\r\n', '').indexOf('.gm-style') === 0) { return; }
+      // intercept style elements for other browsers
+      if (newElement.tagName.toLowerCase() === 'style' && newElement.innerHTML && newElement.innerHTML.replace('\r\n', '').indexOf('.gm-style') === 0) { return; }
+
       insertBefore.call(head, newElement, referenceElement);
     };
 
