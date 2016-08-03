@@ -91,7 +91,7 @@ function buildMap(markers) {
         function transformMarkers(markers) {
             return $.map(markers, function(marker, i) {
                 var markerSide = 10.0;
-                var circlePin = {
+                var circlePin = { // marker_one.svg
                     path:  'M-10,0a10,10 0 1,0 20,0a10,10 0 1,0 -20,0\
                             M-2,0a2,2 0 1,0 4,0a2,2 0 1,0 -4,0',
                     strokeColor: '#4990E2',
