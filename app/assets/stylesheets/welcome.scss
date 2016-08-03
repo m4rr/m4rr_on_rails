@@ -154,8 +154,9 @@ span.nbsp {
 }
 
 span.now {
-  color: $hover;
-  border: 1px solid $hover;
+  $now-color: lighten($hover, 20%);
+  color: $now-color;
+  border: 1px solid $now-color;
   border-radius: 4px;
   padding: 0;
   margin: 0 0 0 9px;
