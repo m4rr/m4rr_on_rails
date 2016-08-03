@@ -165,7 +165,8 @@ ul {
 .nbsp {
   white-space: nowrap;
 
-  .app & {
+  /* .nbsp right after <strong> (in case of "for Telegram") */
+  strong + & {
     color: $dimmed-color;
   }
 }
