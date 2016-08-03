@@ -154,19 +154,16 @@ ul {
 }
 
 span.now {
-  $now-color: lighten($hover, 20%);
-  color: $now-color;
-  border: 1px solid $now-color;
-  border-radius: 4px;
-  padding: 0;
-  margin: 0 0 0 9px;
-  padding: 2px 2px 2px 5px;
-  height: 20px;
-
+  // fixes
+  display: inline;
   position: relative;
   top: -2px;
+  padding: 0 7px;
+  line-height: 0;
 
-  font-size: 9px;
+  // design
+  color: $hover;
+  font-size: 10px;
   font-weight: bold;
   letter-spacing: .2em;
   text-transform: uppercase;
