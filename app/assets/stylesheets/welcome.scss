@@ -96,9 +96,23 @@ strong {
 }
 
 p {
-  color: $dimmed-color;
   margin: $margin;
   margin-top: 0;
+
+  splitter {
+    display: inline;
+    color: $dimmed-color;
+    padding: 20px 0px;
+    margin: 0 7px 0 9px;
+
+    &:before {
+      content: '\2022'; /* Unicode bullet symbol • */
+      font-size: 12px;
+      line-height: 0;
+      position: relative;
+      top: -1px;
+    }
+  }
 
   &.app {
     margin-bottom: 10px;
@@ -125,9 +139,9 @@ ul {
     margin-left: 20px;
     padding: 5px 0 0 0;
     list-style-type: none;
-    color: $dimmed-color;
 
     &:before {
+      color: $dimmed-color;
       content: '\2022'; /* Unicode bullet symbol */
       margin-left: -13px;
       padding-right: 0.5em;
