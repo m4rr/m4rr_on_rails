@@ -18,7 +18,7 @@ html, body, {
   box-shadow: none;
   color: $color;
   font-family: $font-stack;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 150%;
   margin: 0px;
   padding: 0px;
@@ -40,7 +40,7 @@ html, body, {
 
 nav {
   max-width: 450px;
-  min-width: 300px;
+  min-width: 320px;
 
   padding-bottom: 15px;
 
@@ -99,18 +99,18 @@ p {
   color: $dimmed-color;
   margin: $margin;
   margin-top: 0;
-}
 
-p.app {
-  margin-bottom: 10px;
+  &.app {
+    margin-bottom: 10px;
 
-  strong {
-    a {
-      color: inherit;
+    strong {
+      a {
+        color: inherit;
 
-      &:hover, &.hover { /* birman hover, used via js */
-        color: $hover;
-        text-decoration: none;
+        &:hover, &.hover { /* birman hover, used via js */
+          color: $hover;
+          text-decoration: none;
+        }
       }
     }
   }
@@ -149,7 +149,7 @@ ul {
   // }
 }
 
-span.nbsp {
+.nbsp {
   white-space: nowrap;
 }
 

@@ -20,7 +20,7 @@ function buildMap(markers) {
                         zoomControl: true,
                         zoomControlOptions: {
                             style: google.maps.ZoomControlStyle.LARGE,
-                            position: google.maps.ControlPosition.RIGHT_TOP
+                            position: google.maps.ControlPosition.LEFT_TOP
                         }
                     }
                 },
