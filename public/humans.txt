@@ -1,3 +1,21 @@
-# Personal
-Marat Saytakov, @m4rr
-From Moscow with love
+/* TEAM */
+
+  Author: Marat Saytakov
+  Contact: remarr [at] m4rr.ru
+  Twitter: @m4rr
+  From: Moscow (with love)
+
+/* THANKS */
+
+  Overall look and feel: @r3s3t
+  From: Moscow
+
+  Map clusters on JavaScript: @bbflame
+  From: Moscow
+
+/* SITE */
+
+  Language: English / Russian
+  Doctype: HTML5
+  Backend: Ruby on Rails
+  IDE: Sublime Text
