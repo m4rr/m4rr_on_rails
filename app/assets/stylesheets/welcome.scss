@@ -5,21 +5,18 @@
 @import 'reset';
 
 $font-stack: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$margin: 20px 30px 15px 30px;
 
-// $bg-color: #fdfdfd; // #159588;
-$fg-color: #666;
+$color: #666;
 $dimmed-color: #999;
-$default-margin: 20px 30px 15px 30px;
-$mobile-margin: 15px 20px;
 $link: #4D92E0; // blue
-$link-hover: #ff2d55; // red
-$link-half: rgba(255, 45, 85, 0.4); // half of red
+$hover: #ff6800; // Яркий оранжевый
 
 * {-webkit-font-smoothing:subpixel-antialiased;}
 
 html, body, {
   box-shadow: none;
-  color: $fg-color;
+  color: $color;
   font-family: $font-stack;
   font-size: 14px;
   line-height: 150%;
@@ -76,12 +73,12 @@ nav {
 
 h1 {
   font-size: 26px;
-  margin: $default-margin;
+  margin: $margin;
   margin-top: 30px;
 }
 
 h2 {
-  margin: $default-margin;
+  margin: $margin;
 }
 
 space {
@@ -94,13 +91,13 @@ strong, b {
 }
 
 strong {
-  color: $fg-color;
+  color: $color;
   font-weight: bold;
 }
 
 p {
   color: $dimmed-color;
-  margin: $default-margin;
+  margin: $margin;
   margin-top: 0;
 }
 
@@ -108,31 +105,19 @@ p.app {
   margin-bottom: 10px;
 
   strong {
-
-
     a {
       color: inherit;
-    }
 
-    a:hover {
-      color: red;
-      text-decoration: none;
-    }
-
-    a.hover { /* birman hover, used via js */
-      color: $link-hover;
-      opacity: 1;
-      text-decoration: underline;
+      &:hover, &.hover { /* birman hover, used via js */
+        color: $hover;
+        text-decoration: none;
+      }
     }
   }
 }
 
-strong {
-  font-weight: bold;
-}
-
 ul {
-  margin: $default-margin;
+  margin: $margin;
   margin-top: 0;
   // margin-bottom: 0;
 
@@ -141,13 +126,12 @@ ul {
     padding: 5px 0 0 0;
     list-style-type: none;
     color: $dimmed-color;
-  }
 
-  li:before {
-    content: '\2022'; /* Unicode bullet symbol */
-    color: $dimmed-color;
-    margin-left: -13px;
-    padding-right: 0.5em;
+    &:before {
+      content: '\2022'; /* Unicode bullet symbol */
+      margin-left: -13px;
+      padding-right: 0.5em;
+    }
   }
 }
 
@@ -170,9 +154,9 @@ span.nbsp {
 }
 
 span.now {
-  color: red;
-  border: 1px solid red;
-  border-radius: 5px;
+  color: $hover;
+  border: 1px solid $hover;
+  border-radius: 4px;
   padding: 0;
   margin: 0 0 0 9px;
   padding: 2px 2px 2px 5px;
@@ -193,56 +177,48 @@ i.icon-paper-plane {
 
 .eof { /* social icon-links */
   font-size: 18px;
-  margin: $default-margin;
+  margin: $margin;
   margin-bottom: 5px;
   word-spacing: 0;
 
-  a, a:visited {
+  a {
+    color: #bbb;
     padding: 5px 11px 5px 0;
-    color: #ccc;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: $link;
   }
 }
 
 
-
-a, a:visited {
+/* global `a` config */
+a {
   color: $link;
   text-decoration: none;
+
+  &:hover, .hover { /* birman hover */
+    color: $hover; // ff2d55
+  }
+
+  &.appstore {
+    display: inline-block;
+
+    border-radius: 12px;
+    padding: 0px 9px 2px 9px;
+    margin-left: -9px;
+
+    &.hover { /* birman hover */
+      color: $hover;
+    }
+
+    &:hover {
+      background-color: $hover;
+      color: white;
+
+      -webkit-background-clip: padding-box; /* for Safari */
+              background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+    }
+  }
+
 }
 
-a:hover, a.hover { /* birman hover */
-  color: $link-hover; // ff2d55
-  text-decoration: underline;
-}
-
-a.appstore {
-  display: inline-block;
-  border: 0 solid white;
-  border-radius: 12px;
-  padding: 0px 9px 2px 9px;
-  // margin: 0px -6px 2px -6px;
-  margin-left: -9px;
-}
-
-a.appstore.hover { /* birman hover */
-  text-decoration: none;
-}
-
-a.appstore:hover {
-  text-decoration: none;
-
-  // border: 1px solid wh;
-  background-color: $link;
-  color: white;
-
-  -webkit-background-clip: padding-box; /* for Safari */
-          background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
-}
 
 @media (max-width: 500px) {
   .container {
@@ -276,8 +252,8 @@ a.appstore:hover {
 
 /* make keyframes that tell the start state and the end state of our object */
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+   @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+        @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
 .fade-in {
   opacity:0;  /* make things invisible upon start */
@@ -320,24 +296,27 @@ a.appstore:hover {
 
 
 
-// map
-.cluster{
+// Map
+
+.cluster {
   font: bold 14px/30px $font-stack;
   position: relative; z-index: 10; color:#fff; background: url(/images/map/marker_cluster.svg) no-repeat 50%; background-size: cover; text-align: center;
 }
-.cluster1{ width:30px; height:30px; }
-.cluster2{ width:35px; height:35px; font-size:15px; line-height:35px; }
-.cluster3{ width:40px; height:40px; font-size:16px; line-height:40px; }
 
-.tooltip{
+.cluster1 { width:30px; height:30px; }
+.cluster2 { width:35px; height:35px; font-size:15px; line-height:35px; }
+.cluster3 { width:40px; height:40px; font-size:16px; line-height:40px; }
+
+.tooltip {
   font: 13px $font-stack;
   position: relative; z-index: 1; width: 160px; color: #333; text-align: center; opacity: 0; transform: translate(0, -20px); transition: .3s;
 }
-.tooltip.show{ transform:translate(0, 0); opacity:1; }
-.tooltip div{ position:absolute; left:0; right:0; bottom:0; }
-.tooltip span{ position:relative; display:inline-block; padding:5px 10px; border-radius:4px; background:rgba(255,255,255,1.0); box-shadow:0 0 3px rgba(0,0,0,.3); }
-.tooltip span:before{ content:''; position:absolute; left:50%; top:100%; margin:0 -6px; border:6px solid transparent; border-top-color:rgba(0,0,0,.1); }
-.tooltip span:after{ content:''; position:absolute; left:50%; top:100%; margin:0 -5px; border:5px solid transparent; border-top-color:rgba(255,255,255,.9); }
+
+.tooltip.show { transform:translate(0, 0); opacity:1; }
+.tooltip div  { position:absolute; left:0; right:0; bottom:0; }
+.tooltip span { position:relative; display:inline-block; padding:5px 10px; border-radius:4px; background:rgba(255,255,255,1.0); box-shadow:0 0 3px rgba(0,0,0,.3); }
+.tooltip span:before { content:''; position:absolute; left:50%; top:100%; margin:0 -6px; border:6px solid transparent; border-top-color:rgba(0,0,0,.1); }
+.tooltip span:after { content:''; position:absolute; left:50%; top:100%; margin:0 -5px; border:5px solid transparent; border-top-color:rgba(255,255,255,.9); }
 
 
 
