@@ -7,7 +7,7 @@ function buildMap(markers) {
             map = $('#map').gmap3({
                 map: {
                     options: {
-                        center: new google.maps.LatLng(56.9475 - 1, 24.106944 - 20), // riga
+                        center: new google.maps.LatLng(56.9475, 24.106944 - 25), // riga
                         // center: new google.maps.LatLng(52.31, 13.22), // berlin
                         // center: new google.maps.LatLng(43.541050, -40.602783), // atl ocean
                         // center: new google.maps.LatLng(51.51, 0), // london
