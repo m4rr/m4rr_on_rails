@@ -134,8 +134,8 @@ p {
       }
     }
 
-    /* if .splitter is right after the .appstore, reduce left-space */
-    .appstore + .splitter {
+    /* if .splitter is right after the .call-to-action, reduce left-space */
+    .call-to-action + .splitter {
       margin-left: 0;
       padding-left: 0;
       &:before {
@@ -225,7 +225,7 @@ a {
     color: $hover; // ff2d55
   }
 
-  &.appstore {
+  &.call-to-action {
     display: inline-block;
 
     border-radius: 12px;
