@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/m4rr
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://m4rr.ru
+  * I am m4rr (https://keybase.io/m4rr) on keybase.
+  * I have a public key ASBcmfZz5_P6jKFq6DSbfEeOMtDCYNpiV8xhianKy7z-0wo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01205c99f673e7f3fa8ca16ae8349b7c478e32d0c260da6257cc6189a9cacbbcfed30a",
+            "host": "keybase.io",
+            "kid": "01205c99f673e7f3fa8ca16ae8349b7c478e32d0c260da6257cc6189a9cacbbcfed30a",
+            "uid": "485d684e5df4594749516222e4f33519",
+            "username": "m4rr"
+        },
+        "service": {
+            "hostname": "m4rr.ru",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.17"
+    },
+    "ctime": 1473010668,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1473010361,
+        "hash": "093a4ab84214934891cc94000c4c4b09af6ed440e915ef003784ac642b74177d475e2c5a67afe1b77b52c0f8a9c99fb5e43bf1fdc3188e2140654f3c83627c2c",
+        "seqno": 618481
+    },
+    "prev": "e4a6a2388603231a4b2c4cc9f6845be6d2309d53544514eb516fa06f3841a378",
+    "seqno": 8,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgXJn2c+fz+oyhaug0m3xHjjLQwmDaYlfMYYmpysu8/tMKp3BheWxvYWTFAut7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwNWM5OWY2NzNlN2YzZmE4Y2ExNmFlODM0OWI3YzQ3OGUzMmQwYzI2MGRhNjI1N2NjNjE4OWE5Y2FjYmJjZmVkMzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNWM5OWY2NzNlN2YzZmE4Y2ExNmFlODM0OWI3YzQ3OGUzMmQwYzI2MGRhNjI1N2NjNjE4OWE5Y2FjYmJjZmVkMzBhIiwidWlkIjoiNDg1ZDY4NGU1ZGY0NTk0NzQ5NTE2MjIyZTRmMzM1MTkiLCJ1c2VybmFtZSI6Im00cnIifSwic2VydmljZSI6eyJob3N0bmFtZSI6Im00cnIucnUiLCJwcm90b2NvbCI6Imh0dHBzOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4xNyJ9LCJjdGltZSI6MTQ3MzAxMDY2OCwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNDczMDEwMzYxLCJoYXNoIjoiMDkzYTRhYjg0MjE0OTM0ODkxY2M5NDAwMGM0YzRiMDlhZjZlZDQ0MGU5MTVlZjAwMzc4NGFjNjQyYjc0MTc3ZDQ3NWUyYzVhNjdhZmUxYjc3YjUyYzBmOGE5Yzk5ZmI1ZTQzYmYxZmRjMzE4OGUyMTQwNjU0ZjNjODM2MjdjMmMiLCJzZXFubyI6NjE4NDgxfSwicHJldiI6ImU0YTZhMjM4ODYwMzIzMWE0YjJjNGNjOWY2ODQ1YmU2ZDIzMDlkNTM1NDQ1MTRlYjUxNmZhMDZmMzg0MWEzNzgiLCJzZXFubyI6OCwidGFnIjoic2lnbmF0dXJlIn2jc2lnxEDuGBNVsNCX2+yoVVAT0rlt0Ms6UpDGXQejq/2TftjrCH4TBLctfA3kTkpJUrKcr0kWGfD4H3MbXZVXDU1pgWwNqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQgnsb+aZMStJ2kD36e0jWWEmSAbqK9h+bxrXMrL+Sn7UmjdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/m4rr
+
+==================================================================
