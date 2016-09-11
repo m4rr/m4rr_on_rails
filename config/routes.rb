@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   # Mauth
   get 'mauth', to: 'mauth#index'
   get 'mauth/privacy-policy', to: 'mauth#privacy_policy'
+
+  # Stars
+  get 'stars', to: 'stars#index'
+  get 'stars/privacy-policy', to: 'stars#privacy_policy'
 end

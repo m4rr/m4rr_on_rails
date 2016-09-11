@@ -12,5 +12,5 @@ Rails.application.config.assets.version = '1.0'
 
 Rails.application.config.assets.precompile += %w( mauth.* )
 Rails.application.config.assets.precompile += %w( likely.* )
-
+Rails.application.config.assets.precompile += %w( stars.* )
 Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|woff2|ttf)\z/
