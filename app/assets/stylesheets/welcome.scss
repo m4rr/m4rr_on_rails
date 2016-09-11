@@ -146,6 +146,12 @@ p {
   }
 }
 
+.soon {
+  color: $dimmed-color !important;
+  font-style: italic;
+  pointer-events: none;
+}
+
 ul {
   margin: $margin;
   margin-top: 0;
