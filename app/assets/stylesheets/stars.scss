@@ -43,16 +43,17 @@ html, body, {
 .main {
   display: flex;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
+
   flex-direction: column;
 
   -webkit-flex: 2;
           flex: 2;
 
   * {
-    text-align: center;
-    padding-bottom: 20px;
-    line-height: 150%;
+      text-align: center;
+      padding-bottom: 20px;
+      line-height: 150%;
   }
 
   h1 {
@@ -72,6 +73,20 @@ html, body, {
 
   img.appstore {
     height: 60px;
+  }
+
+  .iPhone {
+    background: image-url('stars/stars-iphone-screen@2x.jpg') top center no-repeat;
+    background-size: 260px;
+
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+
+    width: 220px;
+    height: 220px;
+
+    flex-grow: 1;
   }
 
   height: 100%;
