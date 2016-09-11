@@ -1,7 +1,23 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Rating Stars: 5 out of 5</title>
+  <%
+    meta title: "Rating Stars: 5 out of 5",
+         description: "The thing missed on Apple Watch. Rate music right on the Apple Watch."
+
+    og title: "Stars.",
+       description: "The thing missed on Apple Watch. Rate music right on the Apple Watch.",
+       image: "https://m4rr.ru/images/stars-og.png",
+       type: "website",
+       url: 'https://m4rr.ru/stars'
+
+    twitter card: "summary",
+            :'text:title' => "Marat Saytakov",
+            :'text:description' => "iOS Software Engineer, Code Mentor, Swift Contributor. And Traveller."
+  %>
+
+  <%= metamagic %>
+
   <meta charset="utf-8">
 
   <%= stylesheet_link_tag :stars, media: 'all' %>
