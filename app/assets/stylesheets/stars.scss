@@ -118,19 +118,22 @@ html, body, {
 
 .images {
   background-image: image-url('stars/all@2x.jpg');
-  background-size: contain;
+  background-size: cover;
   background-repeat: repeat-x;
 
-  position: absolute;
-  left: 0;
-  top: 0;
-
   height: 100%;
-  width: 300%;
-  animation: slideshow 20s linear infinite;
+  width: 100%;
+
+          animation: slideshow 150s linear infinite;
+  -webkit-animation: slideshow 150s linear infinite;
 }
 
 @keyframes slideshow {
-  0%    { left: 0; }
-  100%  { left: -200%; }
+  0%    { background-position: 0 0; }
+  100%  { background-position: 2000% 0; }
+}
+
+@-webkit-keyframes slideshow {
+  0%    { background-position: 0 0; }
+  100%  { background-position: 2000% 0; }
 }
