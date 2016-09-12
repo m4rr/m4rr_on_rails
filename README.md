@@ -1,5 +1,3 @@
-## m4rr.ru
-
 A source code of [m4rr.ru](https://m4rr.ru)
 
 ## :flashlight: Known Issues
