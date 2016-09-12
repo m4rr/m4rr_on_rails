@@ -1,8 +1,8 @@
-# m4rr.ru
+## m4rr.ru
 
 A source code of [m4rr.ru](https://m4rr.ru)
 
-:flashlight: # Known Issues
+## :flashlight: Known Issues
 
 * A `https://m4rr.ru/404` returns `200 OK` despite it is a 404 actually.
 
