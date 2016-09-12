@@ -135,3 +135,34 @@ html, body, {
   0%    { background-position: 0 0; }
   100%  { background-position: 2000% 0; }
 }
+
+/* global `a` config */
+a {
+  color: $link;
+  text-decoration: none;
+
+  &:hover, .hover { /* birman hover */
+    color: $hover; // ff2d55
+  }
+
+  &.call-to-action {
+    display: inline-block;
+
+    border-radius: 12px;
+    padding: 0px 9px 2px 9px;
+    margin-left: -9px;
+
+    &.hover { /* birman hover */
+      color: $hover;
+    }
+
+    &:hover {
+      background-color: $hover;
+      color: white;
+
+      -webkit-background-clip: padding-box; /* for Safari */
+              background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+    }
+  }
+
+}
