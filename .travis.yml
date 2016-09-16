@@ -18,8 +18,8 @@ after_install:
   - rake install
 
 deploy:
-  - provider: script
-  - script: .deploy.sh
+  provider: script
+  script: .deploy.sh
   on:
     branch: master
 
