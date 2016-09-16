@@ -36,4 +36,4 @@ bower.json
 # Ignore pow environment settings
 .powenv
 
-deploy.sh
+# deploy.sh
