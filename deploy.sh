@@ -1,7 +1,7 @@
 #!/bin/bash
 SECONDS=0
 echo 'SSH connecting...';\
-ssh m4rr@178.62.208.97 -p 1123 "cd m4rr_ru_on_rails;\
+ssh -o "StrictHostKeyChecking no" m4rr@178.62.208.97 -p 1123 "cd m4rr_ru_on_rails;\
 echo 'SSH connected';\
 cd ~/m4rr_ru_on_rails;\
 git pull;\
