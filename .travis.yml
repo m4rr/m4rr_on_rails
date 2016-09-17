@@ -1,8 +1,4 @@
-
-language: ruby
-cache:
-  directories:
-    - bundle
+osx_image: xcode8
 
 rvm:
   - 2.1.3
