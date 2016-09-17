@@ -7,8 +7,10 @@ branches:
 rvm:
   - 2.1.3
 
-deploy:
-  provider: script
-  script: .deploy.sh
-  on:
-    branch: master
+script: ./deploy.sh
+
+# deploy:
+#   provider: script
+#   script: .deploy.sh
+#   on:
+#     branch: master
