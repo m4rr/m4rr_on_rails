@@ -90,8 +90,7 @@ h1 {
 }
 
 h2 {
-  font-size: 17px;
-  font-weight: 500;
+  font-weight: bold;
   margin: $margin;
   margin-top: 0px;
 }
@@ -126,7 +125,7 @@ p {
   }
 
   &.app {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 
     strong {
       a {
@@ -167,8 +166,28 @@ ul {
     &:before {
       color: $dimmed-color;
       content: '\2022'; /* Unicode bullet symbol */
-      margin-left: -13px;
+      margin-left: -12px;
       padding-right: 0.5em;
+    }
+  }
+}
+
+ul.menu {
+  li {
+    display: inline-block;
+    margin-left: 14px;
+    &:before {
+      font-size: 12px;
+      line-height: 0;
+      position: relative;
+      top: -1px;
+      left: 1px;
+    }
+    &:first-child {
+      margin-left: 0;
+      &:before {
+        content: '';
+      }
     }
   }
 }
@@ -212,7 +231,7 @@ i.icon-paper-plane {
   font-size: 12px;
 }
 
-.eof { /* social icon-links */
+.links { /* social icon-links */
   font-size: 18px;
   word-spacing: 0;
 
