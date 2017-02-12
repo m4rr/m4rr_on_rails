@@ -175,18 +175,24 @@ ul {
 ul.menu {
   li {
     display: inline-block;
-    margin-left: 14px;
+    margin-left: 0;
+    margin-right: 0;
     &:before {
+      content: none;
+    }
+    &:after {
+      color: $dimmed-color;
+      content: '\2022'; /* Unicode bullet symbol */
       font-size: 12px;
       line-height: 0;
       position: relative;
       top: -1px;
-      left: 1px;
+      padding-right: 10px;
+      left: 5px;
     }
-    &:first-child {
-      margin-left: 0;
-      &:before {
-        content: '';
+    &:last-child {
+      &:after {
+        content: none;
       }
     }
   }
