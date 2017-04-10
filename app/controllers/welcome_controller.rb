@@ -46,7 +46,7 @@ class WelcomeController < ApplicationController
       end
     end
 
-    Tripster_URL  = 'http://tripster.ru/api/users/m4rr/basic/?'
+    Tripster_URL  = 'https://tripster.ru/api/users/m4rr/basic/?'
     ISO_3166_JSON = 'public/iso-3166-countries-list.json'
 
     def from_the_internets
