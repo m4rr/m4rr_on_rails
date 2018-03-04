@@ -279,8 +279,11 @@ a {
               background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
     }
   }
-
 }
+
+
+
+
 
 @media only screen and (max-width: 767px) {
   .container {
@@ -380,43 +383,3 @@ a {
 .tooltip span { position:relative; display:inline-block; padding:5px 10px; border-radius:4px; background:rgba(255,255,255,1.0); box-shadow:0 0 3px rgba(0,0,0,.3); }
 .tooltip span:before { content:''; position:absolute; left:50%; top:100%; margin:0 -6px; border:6px solid transparent; border-top-color:rgba(0,0,0,.1); }
 .tooltip span:after { content:''; position:absolute; left:50%; top:100%; margin:0 -5px; border:5px solid transparent; border-top-color:rgba(255,255,255,.9); }
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*iPhone 6 Portrait*/
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) {
-}
-
-/*iPhone 6 landscape*/
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : landscape) {
-}
-
-/*iPhone 6+ Portrait*/
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : portrait) {
-}
-
-/*iPhone 6+ landscape*/
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : landscape) {
-}
-
-/*iPhone 6 and iPhone 6+ portrait and landscape*/
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px){
-}
-
-/*iPhone 6 and iPhone 6+ portrait*/
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) and (orientation : portrait){
-}
-
-/*iPhone 6 and iPhone 6+ landscape*/
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) and (orientation : landscape){
-}
