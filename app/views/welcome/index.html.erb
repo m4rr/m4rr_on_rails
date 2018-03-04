@@ -110,11 +110,28 @@
 </div>
 
 <script type="text/javascript">
+  function isMobile() {
+    var 
+      element = document.querySelector('#map'),
+      style = window.getComputedStyle(element),
+      display = style.getPropertyValue('display');
+  
+    return display === 'none';
+  }
+
   function initialize() {
+    if (isMobile()) { 
+      return;
+    }
+
     buildMap(<%= raw @map_json %>);
   }
 
   function loadScript() {
+    if (isMobile()) { 
+      return;
+    }
+
     // Preventing the Google Maps libary from downloading an extra font
     var head = $('head')[0];
     var insertBefore = head.insertBefore;
@@ -135,5 +152,7 @@
       '&sensor=false&callback=initialize&region=ru'; // &signed_in=true
     document.body.appendChild(script);
   }
+
   window.onload = loadScript;
 </script>
+

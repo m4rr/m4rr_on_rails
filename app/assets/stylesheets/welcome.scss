@@ -293,11 +293,12 @@ a {
     height: 40%;
     -webkit-flex: none;
             flex: none;
+    display: none;
   }
   nav {
     position: absolute;
     left: 0;
-    top: 40%;
+    top: 0%;
 
     max-width: none;
     min-height: 100%;
