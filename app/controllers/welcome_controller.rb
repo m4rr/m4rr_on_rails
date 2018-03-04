@@ -3,15 +3,16 @@ require 'nokogiri'
 
 class WelcomeController < ApplicationController
 
-  http_basic_authenticate_with name: 'm4rr', password: ENV["SyncPass"], except: [:index] # only: [:sync]
+  if Rails.env.production?
+    http_basic_authenticate_with name: 'm4rr', password: ENV["SyncPass"], except: [:index] # only: [:sync]
+  end
 
   def index
     @map_json = cities_json
 
-    @cities_count    = City.count
-    @ru_cities_count = City.where( country_alpha2: 'RU').count
-    @us_cities_count = City.where( country_alpha2: 'US').count
     @countries_count = City.group(:country_alpha2).count.count
+    @cities_count = @countries_count * 8 # hardcode here because Tripster API limits response to 150.
+    # Statistically there are 8 cities per country.
   end
 
   def sync # covered by http basic auth
