@@ -244,9 +244,22 @@ i.icon-paper-plane {
   margin: $margin;
   margin-left: 21px; /* compensation of following `a` padding */
 
+  i.icon-paper-plane {
+    font-size: 15px;
+  }
+
   a {
     padding: 5px;
     color: $dimmed-color;
+
+    &.disabled {
+      opacity: 0.25;
+      cursor: default;
+
+      &:hover {
+        color: $dimmed-color;
+      }
+    }
   }
 }
 
