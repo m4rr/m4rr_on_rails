@@ -6,7 +6,7 @@ branches:
 install:
 - echo "$sshaddr ssh-rsa $dopubkey" >> $HOME/.ssh/known_hosts
 script:
-- ssh -v -o "StrictHostKeyChecking no" m4rr@$sshaddr -p $sshport $sshcomms
+- ssh -o "StrictHostKeyChecking no" m4rr@$sshaddr -p $sshport $sshcomms
 before_install:
 - openssl aes-256-cbc -K $encrypted_ed781c473ef3_key -iv $encrypted_ed781c473ef3_iv
   -in id_rsa.enc -out $HOME/.ssh/id_rsa -d
