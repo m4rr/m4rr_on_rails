@@ -13,6 +13,8 @@ install:
   # - echo \"[$sshaddr]:$sshport ssh-rsa $dopubkey\" >> $HOME/.ssh/known_hosts
   - echo "$sshaddr ssh-rsa $dopubkey" >> $HOME/.ssh/known_hosts
   - cat $HOME/.ssh/known_hosts
+  - ls $HOME/.ssh/
+  - cat $HOME/.ssh/id_rsa.pub
   # - echo \"ssh-rsa $dopubkey\" >> $HOME/.ssh/authorized_keys
 
 script:
