@@ -6,4 +6,6 @@ branches:
     - master
 
 script:
-  - ssh -o "StrictHostKeyChecking no" $sshaddr -p $sshport \"$sshcomms\"
+  - ssh -o "StrictHostKeyChecking no" $sshaddr -p $sshport \"exit"
+
+# $sshcomms\"
