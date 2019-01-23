@@ -9,8 +9,8 @@ branches:
 #   ssh_known_hosts:
 #     - $sshaddr
 
-install:
-  - echo \"[$sshaddr]:$sshport ssh-rsa $dopubkey\" >> $HOME/.ssh/known_hosts
+# install:
+  # - echo \"[$sshaddr]:$sshport ssh-rsa $dopubkey\" >> $HOME/.ssh/known_hosts
   # - echo \"$dopubkey\" >> $HOME/.ssh/known_hosts
 
 script:
