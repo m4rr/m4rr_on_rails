@@ -5,12 +5,12 @@ branches:
   only:
     - master
 
-addons:
-  ssh_known_hosts:
-    - $sshaddr
+# addons:
+#   ssh_known_hosts:
+#     - $sshaddr
 
 install:
-  # - echo \"[$sshaddr]:$sshport ssh-rsa $dopubkey\" >> $HOME/.ssh/known_hosts
+  - echo \"$sshaddr\" >> $HOME/.ssh/known_hosts
   - echo \"ssh-rsa $dopubkey\" >> $HOME/.ssh/authorized_keys
 
 script:
