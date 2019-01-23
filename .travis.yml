@@ -6,5 +6,4 @@ branches:
     - master
 
 script:
-  - ls
-  - deploy.sh
+  - ssh -o "StrictHostKeyChecking no" $(ssh-addr) -p $(ssh-port) \"$(ssh-commands)\"
