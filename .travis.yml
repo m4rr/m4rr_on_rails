@@ -14,6 +14,6 @@ install:
   - echo \"ssh-rsa $dopubkey\" >> $HOME/.ssh/authorized_keys
 
 script:
-  - ssh -o "StrictHostKeyChecking no" m4rr@$sshaddr -p $sshport "exit"
+  - ssh -v -o "StrictHostKeyChecking no" m4rr@$sshaddr -p $sshport "exit"
 
 # \"$sshcomms\"
