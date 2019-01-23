@@ -10,8 +10,9 @@ branches:
 #     - $sshaddr
 
 install:
-  - echo \"[$sshaddr]:$sshport ssh-rsa $dopubkey\" >> $HOME/.ssh/known_hosts
-  - echo \"ssh-rsa $dopubkey\" >> $HOME/.ssh/authorized_keys
+  # - echo \"[$sshaddr]:$sshport ssh-rsa $dopubkey\" >> $HOME/.ssh/known_hosts
+  - echo \"ssh-rsa $dopubkey\" >> $HOME/.ssh/known_hosts
+  # - echo \"ssh-rsa $dopubkey\" >> $HOME/.ssh/authorized_keys
 
 script:
   - ssh -v -o "StrictHostKeyChecking no" m4rr@$sshaddr -p $sshport "exit"
