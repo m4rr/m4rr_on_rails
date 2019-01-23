@@ -1,23 +1,12 @@
 language: minimal
 dist: xenial
-
 branches:
   only:
-    - master
-
-# addons:
-#   ssh_known_hosts:
-#     - $sshaddr
-
+  - master
 install:
-  # - echo \"[$sshaddr]:$sshport ssh-rsa $dopubkey\" >> $HOME/.ssh/known_hosts
-  - echo "$sshaddr ssh-rsa $dopubkey" >> $HOME/.ssh/known_hosts
-  - cat $HOME/.ssh/known_hosts
-  - ls $HOME/.ssh/
-  - cat $HOME/.ssh/id_rsa.pub
-  # - echo \"ssh-rsa $dopubkey\" >> $HOME/.ssh/authorized_keys
-
+- echo "$sshaddr ssh-rsa $dopubkey" >> $HOME/.ssh/known_hosts
 script:
-  - ssh -v -o "StrictHostKeyChecking no" m4rr@$sshaddr -p $sshport "exit"
-
-# \"$sshcomms\"
+- ssh -v -o "StrictHostKeyChecking no" m4rr@$sshaddr -p $sshport "exit"
+before_install:
+- openssl aes-256-cbc -K $encrypted_ed781c473ef3_key -iv $encrypted_ed781c473ef3_iv
+  -in id_rsa.enc -out ~\/.ssh/id_rsa -d
