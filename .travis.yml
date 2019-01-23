@@ -6,4 +6,4 @@ branches:
     - master
 
 script:
-  - ssh -o "StrictHostKeyChecking no" $(ssh-addr) -p $(ssh-port) \"$(ssh-commands)\"
+  - ssh -o "StrictHostKeyChecking no" $sshaddr -p $sshport \"$sshcomms\"
