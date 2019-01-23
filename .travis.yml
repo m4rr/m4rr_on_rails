@@ -5,7 +5,14 @@ branches:
   only:
     - master
 
-script:
-  - ssh -o "StrictHostKeyChecking no" $sshaddr -p $sshport "exit"
+# addons:
+#   ssh_known_hosts:
+#     - $sshaddr
 
-# $sshcomms\"
+install:
+  - echo \"$dopubkey\" >> $HOME/.ssh/known_hosts
+
+script:
+  - ssh -o "StrictHostKeyChecking no" m4rr:$sshaddr -p $sshport "exit"
+
+# \"$sshcomms\"
