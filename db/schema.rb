@@ -10,28 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151016000318) do
+ActiveRecord::Schema.define(version: 2015_10_16_000318) do
 
-  create_table "beta", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "desc"
-    t.string   "how_did_you_know"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "beta", id: :serial, force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "desc"
+    t.string "how_did_you_know"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "cities", force: :cascade do |t|
-    t.string   "name_en"
-    t.string   "name_ru"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "country_alpha2"
-    t.string   "country_name_en"
-    t.string   "country_name_ru"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+  create_table "cities", id: :serial, force: :cascade do |t|
+    t.string "name_en"
+    t.string "name_ru"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "country_alpha2"
+    t.string "country_name_en"
+    t.string "country_name_ru"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -1,4 +1,4 @@
-class CreateBeta < ActiveRecord::Migration
+class CreateBeta < ActiveRecord::Migration[5.0]
   def change
     create_table :beta do |t|
       t.string :first_name

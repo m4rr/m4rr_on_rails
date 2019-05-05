@@ -1,0 +1,4 @@
+2019/05/05 13:04:08 [emerg] 1#1: "location" directive is not allowed here in /etc/nginx/nginx.conf:59
+2019/05/05 13:04:10 [emerg] 1#1: "location" directive is not allowed here in /etc/nginx/nginx.conf:59
+2019/05/05 13:04:13 [emerg] 1#1: "location" directive is not allowed here in /etc/nginx/nginx.conf:59
+2019/05/05 13:04:15 [emerg] 1#1: "location" directive is not allowed here in /etc/nginx/nginx.conf:59
