@@ -40,9 +40,9 @@ ADD Gemfile /myapp/Gemfile
 
 RUN bundle install --without development test
 
-RUN bundle exec rake routes
-RUN bundle exec rake db:migrate
-RUN bundle exec rake --quiet assets:clobber
-RUN bundle exec rake --quiet assets:precompile
+# RUN bundle exec rake routes
+# RUN bundle exec rake db:migrate
+# RUN bundle exec rake --quiet assets:clobber
+# RUN bundle exec rake --quiet assets:precompile
 
 ADD . /myapp
