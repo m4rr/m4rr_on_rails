@@ -54,7 +54,7 @@ services:
     depends_on:
       - db
     ports:
-      - 3000
+      - 5432
     environment: &environment
       - SQUIRTUAL_HOST=m4rr.ru
       # - VIRTUAL_HOST=m4rr.ru
