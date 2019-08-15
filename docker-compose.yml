@@ -1,7 +1,8 @@
 version: '3'
 services:
   nginx:
-    image: nginx
+    # image: nginx
+    build: ./docker/web/
     labels:
       com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy: "true"
     container_name: nginx-web
@@ -10,8 +11,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      # - /srv/volumes/nginx/conf.d:/etc/nginx/conf.d
-      - ./nginx-m4.conf:/etc/nginx/conf.d
+      - /srv/volumes/nginx/conf.d:/etc/nginx/conf.d
       - /srv/volumes/nginx/vhost.d:/etc/nginx/vhost.d
       - /srv/volumes/nginx/html:/usr/share/nginx/html
       - /srv/volumes/nginx/certs:/etc/nginx/certs:ro
