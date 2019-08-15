@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
+gem 'rails', '~>5'
 
-gem 'rails', '~> 5.0'
 gem 'bootsnap', require: false
 # gem 'puma'
 gem 'pg'
