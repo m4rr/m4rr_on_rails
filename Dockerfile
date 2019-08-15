@@ -34,15 +34,13 @@ WORKDIR /myapp
 
 ADD Gemfile /myapp/Gemfile
 
+ENV BUNDLER_VERSION 2.0.1
+
 ENV RAILS_ENV production
 ENV RAILS_SERVE_STATIC_FILES true
 ENV RAILS_LOG_TO_STDOUT true
 
 RUN bundle install --without development test
-
-ENV RAILS_ENV production
-ENV RAILS_SERVE_STATIC_FILES true
-ENV RAILS_LOG_TO_STDOUT true
 
 # RUN bundle exec rake routes
 # RUN bundle exec rake db:migrate
