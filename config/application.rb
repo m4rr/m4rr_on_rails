@@ -17,3 +17,5 @@ module Website
     # the framework and any gems in your application.
   end
 end
+
+config.secret_key_base = Figaro.env.secret_key_base
