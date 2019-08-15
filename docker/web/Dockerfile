@@ -4,4 +4,4 @@
 FROM nginx
 
 # Copy custom configuration file from the current directory
-COPY ./nginx-def.conf.conf /etc/nginx/conf.d/default.conf
+COPY nginx-def.conf /etc/nginx/conf.d/default.conf
