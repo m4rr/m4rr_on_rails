@@ -186,7 +186,7 @@ DEPENDENCIES
   nokogiri (~> 1.8)
   pg
   rack-ssl-enforcer
-  rails (~> 5)
+  rails (~> 5.1)
   rake (~> 12)
   sass-rails
   spring
