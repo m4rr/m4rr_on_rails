@@ -55,9 +55,10 @@ services:
     ports:
       - 3000
     environment: &environment
-      - VIRTUAL_HOST=m4rr.ru
-      - LETSENCRYPT_HOST=m4rr.ru
-      - LETSENCRYPT_EMAIL=remarr@m4rr.ru
+      - SQUIRTUAL_HOST=m4rr.ru
+      # - VIRTUAL_HOST=m4rr.ru
+      # - LETSENCRYPT_HOST=m4rr.ru
+      # - LETSENCRYPT_EMAIL=remarr@m4rr.ru
     volumes: &volumes
       - ./volumes/app/log:/app/log
       - ./volumes/app/tmp:/app/tmp
