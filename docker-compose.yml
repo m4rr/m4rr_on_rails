@@ -44,7 +44,7 @@ services:
     volumes:
       - ./volumes/db/data:/var/lib/postgresql/data
   app:
-    image: my_genius_app
+    # image: my_genius_app
     command: bundle exec unicorn -p 3000
     restart: unless-stopped
     build:
