@@ -15,7 +15,8 @@ gem 'nokogiri', '~> 1.8' # xml parsing
 gem 'geocoder'
 gem 'turbolinks'
 gem 'metamagic'
-gem 'figaro'
+# gem 'figaro'
+gem 'rake', '~> 12'
 
 group :development, :test do
   # gem 'sdoc', '~> 0.4.0', group: :doc
