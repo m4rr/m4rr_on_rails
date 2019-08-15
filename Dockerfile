@@ -42,6 +42,7 @@ ENV RAILS_LOG_TO_STDOUT true
 
 RUN gem install bundler && bundle install --without development test --jobs 20 --retry 5
 
+ENV SECRET_KEY_BASE=`bin/rake secret` bin/rake assets:precompile
 # RUN bundle exec rake routes
 # RUN bundle exec rake db:migrate
 # RUN bundle exec rake --quiet assets:clobber
