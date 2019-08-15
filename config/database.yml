@@ -8,4 +8,4 @@ default: &default
 
 production:
   <<: *default
-  database: app_name_production
+  # database: app_name_production

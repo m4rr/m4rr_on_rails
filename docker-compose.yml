@@ -1,3 +1,5 @@
+# https://blog.velalu.qa/development/bugs/2018/03/05/secure-rails-docker-environment-with-lets-encrypt.html
+
 version: '3'
 services:
   nginx:
