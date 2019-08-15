@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 gem 'rails', '~> 5'
 gem 'unicorn'
+gem 'bundler', '~> 2'
 
 gem 'bootsnap', require: false
 # gem 'puma'
